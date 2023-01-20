@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class LandingPageComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
   userForm: FormGroup;
   validMessage: string = "";
 
@@ -19,7 +19,8 @@ export class LandingPageComponent implements OnInit {
       username: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       phoneNumber: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required)
     });
   }
 

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="">
+      <img src="assets/logonav.png" alt="" width="120" height="60">
+    </a>
+  </div>
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/registration">Register</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+<div class="form-body">
+  <div class="row">
+      <div class="form-holder">
+          <div class="form-content">
+              <div class="form-items">
+                  <h3>New User Registration</h3>
+                  <p>Fill in the data below</p>
+                  
+                      <div class="container">
+                          <form [formGroup]="userForm" (ngSubmit)="submitRegistration()" novalidate>
+                            <div *ngIf="validMessage != ''">
+                              <h3 class="has-info">{{validMessage}}</h3>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" formControlName="username" placeholder= "Username" required autofocus/>
+                            </div>
+                            <div class="form-group">
+                              <input type="email" class="form-control" formControlName="email" placeholder= "Email" required/>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number"required/>
+                            </div>
+                            <div class="form-group">
+                              <input type="password" class="form-control" formControlName="password" placeholder= "Password" required/>
+                            </div>
+                            <div class="form-group">
+                              <input type="password" class="form-control" formControlName="confirmPassword" placeholder= "Confirm Password" required/>
+                            </div>
+                          <div class="form-button mt-3">
+                          <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                          <pre></pre>
+                      </div>
+                      <p class="text-center">Already have an account? <a href="/login">Log In here</a> </p>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
