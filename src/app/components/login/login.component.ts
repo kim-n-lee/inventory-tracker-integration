@@ -32,15 +32,15 @@ export class LoginComponent implements OnInit {
   submitLogin() {
     if (this.loginForm.valid) {
       this.user = (this.loginForm.value)
-      this.loginservice.authenticate(this.user).subscribe(
-        data => {
-          if (data == true){
+      this.loginservice.authenticate(this.user).subscribe( //subscribe allows us to access the data returned
+        data => { // if the data is valid, this is where is will be handled
+          if (data == true){ 
             this.loginForm.reset();
             console.log(this.user)
-            this.router.navigate(['/']);
+            this.router.navigate(['/dashboard']);
             return true;
           } else {
-            console.log ("didn't workkkk")
+            console.log ("didn't work")
           }
         }
       )
