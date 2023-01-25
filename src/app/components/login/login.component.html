@@ -23,16 +23,16 @@
             <div class="form-content">
                 <div class="form-items">
                     <h3>User Login</h3>
-                    <form class="requires-validation" novalidate>
+                    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="requires-validation" novalidate>
 
                         <div class="col-md-12">
-                           <input class="form-control" type="text" name="username" placeholder="Username" required>
+                           <input class="form-control" type="text" formControlName="username" placeholder="Username" required>
                            <div class="valid-feedback">Username field is valid!</div>
                            <div class="invalid-feedback">Username field cannot be blank!</div>
                         </div>
 
                        <div class="col-md-12">
-                          <input class="form-control" type="password" name="password" placeholder="Password" required>
+                          <input class="form-control" type="password" formControlName="password" placeholder="Password" required>
                            <div class="valid-feedback">Password field is valid!</div>
                            <div class="invalid-feedback">Password field cannot be blank!</div>
                        </div>

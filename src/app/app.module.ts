@@ -11,6 +11,7 @@ import { UsersComponent } from './components/users/users.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthenticationService } from './services/authentication.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
