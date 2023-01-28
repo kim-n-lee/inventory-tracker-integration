@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     RegistrationComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddmanufacturerComponent
   ],
   imports: [
     BrowserModule,

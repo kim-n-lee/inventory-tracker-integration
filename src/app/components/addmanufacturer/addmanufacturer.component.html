@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <img src="assets/logonav.png" alt="" width="120" height="60">
+      </a>
+    </div>
+     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link">All Inventory</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/additem">Add New Item</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Low Stock</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+ 
+ 
+  <div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Add Manufacturer</h3>
+                   
+                        <div class="container">
+                            <form [formGroup]="addManufacturerForm" (ngSubmit)="submitAddManufacturer()" novalidate>
+                              <div *ngIf="validMessage != ''">
+                                <h3 class="has-info">{{validMessage}}</h3>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="name" placeholder= "Name" required autofocus/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="address" placeholder= "Address" required/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number"required/>
+                              </div>
+                            <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Add</button>
+                            <pre></pre>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+ 
