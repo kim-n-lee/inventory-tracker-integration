@@ -18,6 +18,10 @@ export class AdditemService {
    return this.http.get('/server/items');
  }
 
+//  getManufacturers(){
+//   return this.http.get('/server/manufacturers');
+// }
+
  addItem(item){
    let body = JSON.stringify(item);
    return this.http.post('/server/items/add', body, httpOptions);

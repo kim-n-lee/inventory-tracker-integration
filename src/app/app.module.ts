@@ -17,6 +17,7 @@ import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufa
 import { AdditemComponent } from './components/additem/additem.component';
 import { Navbar1Component } from './components/navbar1/navbar1.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
+import { ManufacturersComponent } from './components/manufacturers/manufacturers.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { Navbar2Component } from './components/navbar2/navbar2.component';
     AddmanufacturerComponent,
     AdditemComponent,
     Navbar1Component,
-    Navbar2Component
+    Navbar2Component,
+    ManufacturersComponent
   ],
   imports: [
     BrowserModule,
