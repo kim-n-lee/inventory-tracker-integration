@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UserService, AuthenticationService],
+  providers: [UserService, AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

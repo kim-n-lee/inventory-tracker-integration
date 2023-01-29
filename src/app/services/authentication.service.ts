@@ -13,10 +13,10 @@ export class AuthenticationService {
   private baseUrl: string;
 
   constructor(private httpClient: HttpClient) { 
-    this.baseUrl =  "/server/authenticate"};
+    this.baseUrl =  "/server/users"};
 
     authenticate(user: any) {
-      return this.httpClient.post(this.baseUrl+'/login', user);
+      return this.httpClient.post(this.baseUrl+'/authenticate', user);
     }
 
     isLoggedIn(){
