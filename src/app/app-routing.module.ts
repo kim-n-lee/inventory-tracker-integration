@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
+import { AdditemComponent } from './components/additem/additem.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path: 'manufacturers/add',
     component: AddmanufacturerComponent
+  },
+
+  {
+    path: 'items/add',
+    component: AdditemComponent
   }
 
 

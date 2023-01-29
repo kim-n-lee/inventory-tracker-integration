@@ -5,17 +5,6 @@
    -moz-osx-font-smoothing: grayscale;
 }
 
-
-.nav-link {
-   margin-right: 30px;
-}
-
-
-.navbar-brand {
-   margin-left: 30px;
-}
-
-
 .form-holder {
    display: flex;
    flex-direction: column;
