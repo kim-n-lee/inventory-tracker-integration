@@ -36,7 +36,10 @@ export class LoginComponent implements OnInit {
         data => { // if the data is valid, this is where is will be handled
           if (data == true){ 
             this.loginForm.reset();
-            console.log(this.user)
+            sessionStorage.setItem("sessionName", this.user.username) //sets a sessionName key in session storage, used to verify if user is logged in
+            console.log("next 2 lines in console verify sessionName as the username and verifies if user is logged in")
+            console.log(sessionStorage.getItem("sessionName"))
+            console.log(this.loginservice.isLoggedIn())
             this.router.navigate(['/dashboard']);
             return true;
           } else {

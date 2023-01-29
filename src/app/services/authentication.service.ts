@@ -16,7 +16,19 @@ export class AuthenticationService {
     this.baseUrl =  "/server/authenticate"};
 
     authenticate(user: any) {
-      return this.httpClient.post(this.baseUrl, user);
+      return this.httpClient.post(this.baseUrl+'/login', user);
+    }
+
+    isLoggedIn(){
+      let user = sessionStorage.getItem('sessionName');
+      // console.log("logged in with " + user);
+      return !(user === null);
+    }
+
+    logout(){
+      sessionStorage.removeItem("sessionName");
+      console.log(this.isLoggedIn());
+      return this.httpClient.get(this.baseUrl+'/logout')
     }
 
     // isUserLoggedIn() {
