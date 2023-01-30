@@ -1,0 +1,40 @@
+<div class="container">
+    <table class="table table-bordered table-inverse">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Minimum Amount</th>
+        <th>Manufacturer</th>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td>
+          {{item.name}}
+        </td>
+        <td>
+          {{item.description}}
+        </td>
+        <td>
+          {{item.category}}
+        </td>
+        <td>
+          {{item.numberInInventory}}
+        </td>
+        <td>
+          {{item.numberMinimumToKeepOnHand}}
+        </td>
+        <td>
+          {{item.manufacturer}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  
+
+
+
+
+

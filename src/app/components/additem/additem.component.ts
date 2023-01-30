@@ -1,69 +1,47 @@
-import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { AdditemService } from 'src/app/services/additem.service';
-import { ManufacturersComponent } from '../manufacturers/manufacturers.component';
-
+import { ItemService } from 'src/app/services/item.service';
+import { ManufacturerService } from 'src/app/services/manufacturer.service';
 
 @Component({
- selector: 'app-additem',
- templateUrl: './additem.component.html',
- styleUrls: ['./additem.component.css']
+  selector: 'app-additem',
+  templateUrl: './additem.component.html',
+  styleUrls: ['./additem.component.css']
 })
-
-
 export class AdditemComponent implements OnInit {
+  addItemForm: FormGroup;
+  validMessage: string = "";
 
- addItemForm: FormGroup;
- validMessage: string = "";
+  constructor(private itemService: ItemService) { }
 
- constructor(private additemService: AdditemService) { }
-
- ngOnInit() {
+  ngOnInit() {
+    //ManufacturerService.getManufacturers();
     this.addItemForm = new FormGroup({
-     name: new FormControl('', Validators.required),
-     description: new FormControl('', Validators.required),
-     numberInInventory: new FormControl('', Validators.required),
-     numberMinimumToKeepOnHand: new FormControl('', Validators.required),
-     manufacturer: new FormControl('', Validators.required),
-
-   });
- }
-
- submitAddItem() {
-   if (this.addItemForm.valid) {
-     this.validMessage = "New item added.";
-     this.additemService.addItem(this.addItemForm.value).subscribe(
-       data => {
-         this.addItemForm.reset();
-         return true;
-       },
-       error => {
-         return Observable.throw(error);
-       }
-     )
-   } else {
-     this.validMessage = "Please fill out the form before submitting!"
-   }
- }
-
+      name: new FormControl('', Validators.required),
+      descriptiom: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required),
+      numberInInventory: new FormControl('', Validators.required),
+      numberMinimumToKeepOnHand: new FormControl('', Validators.required),
+      manufacturer: new FormControl('', Validators.required)
+  });
 }
 
+submitItem() {
+  if (this.addItemForm.valid) {
+    this.validMessage = "New item added!";
+    this.itemService.addItem(this.addItemForm.value).subscribe(
+      data => {
+        this.addItemForm.reset();
+        return true;
+      },
+      error => {
+        return Observable.throw(error);
+      }
+    )
+  } else {
+    this.validMessage = "Please fill out the form before submitting!"
+  }
+}
 
-
-
-
-
-
-  
-
-
-
-  
-
-  
-
-
-
-
-
+}

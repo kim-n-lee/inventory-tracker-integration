@@ -1,14 +1,13 @@
 <app-navbar2></app-navbar2>
 
-  <div class="form-body">
+<div class="form-body">
     <div class="row">
         <div class="form-holder">
             <div class="form-content">
                 <div class="form-items">
-                    <h3>Add Manufacturer</h3>
-                   
+                    <h3>Add New Manufacturer</h3>
                         <div class="container">
-                            <form [formGroup]="addManufacturerForm" (ngSubmit)="submitAddManufacturer()" novalidate>
+                            <form [formGroup]="addManufacturerForm" (ngSubmit)="submitManufacturer()" novalidate>
                               <div *ngIf="validMessage != ''">
                                 <h3 class="has-info">{{validMessage}}</h3>
                               </div>
@@ -31,4 +30,4 @@
         </div>
     </div>
   </div>
- 
+  

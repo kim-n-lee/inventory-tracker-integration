@@ -9,18 +9,17 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ManufacturerService {
+export class ItemService {
 
   constructor(private http:HttpClient) { }
 
-  getManufacturers() {
-    return this.http.get('/server/manufacturers');
+  getItems() {
+    return this.http.get('/server/items');
   }
 
-  addManufacturer(manufacturer) {
-    let body = JSON.stringify(manufacturer);
-    return this.http.post('/server/manufacturers/add', body, httpOptions);
+  addItem(item){
+    let body = JSON.stringify(item);
+    return this.http.post('/server/items/add', body, httpOptions);
   }
+
 }
-
-

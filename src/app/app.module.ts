@@ -14,10 +14,11 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
-import { AdditemComponent } from './components/additem/additem.component';
 import { Navbar1Component } from './components/navbar1/navbar1.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { ManufacturersComponent } from './components/manufacturers/manufacturers.component';
+import { ItemsComponent } from './components/items/items.component';
+import { AdditemComponent } from './components/additem/additem.component';
 
 
 @NgModule({
@@ -29,10 +30,11 @@ import { ManufacturersComponent } from './components/manufacturers/manufacturers
     LoginComponent,
     DashboardComponent,
     AddmanufacturerComponent,
-    AdditemComponent,
     Navbar1Component,
     Navbar2Component,
-    ManufacturersComponent
+    ManufacturersComponent,
+    ItemsComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,
