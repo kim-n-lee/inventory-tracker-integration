@@ -27,10 +27,11 @@
                                 <input type="text" class="form-control" formControlName="numberMinimumToKeepOnHand" placeholder= "Minimum Amount"required/>
                               </div>
                               <div class="form-group">
-                                <select class="form-control" formControlName="manufacturer" required>
-                                  <option value="">Manufacturer</option>
-                                  <option *ngFor="let manufacturer of manufacturers"></option>
-                                  <option>{{manufacturer.name}}</option>
+                                <select class="form-control" formControlName="manufacturer" name="my-select" [(ngModel)]="mySelect" (change)="selectChange()" required>
+                                  <option>Manufacturer</option>
+                                  <option [value]="item.id" *ngFor="let item of manufacturers">
+                                  {{item.name}}
+                                  </option>
                                 </select>
                               </div>
                             <div class="form-button mt-3">

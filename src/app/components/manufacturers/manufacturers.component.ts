@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
 
+
 @Component({
   selector: 'app-manufacturers',
   templateUrl: './manufacturers.component.html',
@@ -26,4 +27,7 @@ getManufacturers(){
   }
 
 }
+
+
+
 
