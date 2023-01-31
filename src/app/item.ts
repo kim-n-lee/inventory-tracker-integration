@@ -2,7 +2,7 @@ import { Manufacturer } from "./manufacturer";
 
 export class Item {
 id: number = 0;
-manufacturer: Manufacturer;
+manufacturer: Manufacturer[];
 name: string = "";
 description: string = "";
 category: string = "";

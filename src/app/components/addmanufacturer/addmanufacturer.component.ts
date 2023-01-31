@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
-import { UserService } from 'src/app/services/user.service';
-import { ItemService } from 'src/app/services/item.service';
 
 @Component({
   selector: 'app-addmanufacturer',
