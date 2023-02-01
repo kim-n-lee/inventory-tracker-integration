@@ -24,7 +24,9 @@
                 <div class="form-items">
                     <h3>User Login</h3>
                     <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="requires-validation" novalidate>
-
+                        <div *ngIf="validMessage != ''">
+                            <h5 style="color:red" class="has-info">{{validMessage}}</h5>
+                          </div>
                         <div class="col-md-12">
                            <input class="form-control" type="text" formControlName="username" placeholder="Username" required>
                            <div class="valid-feedback">Username field is valid!</div>

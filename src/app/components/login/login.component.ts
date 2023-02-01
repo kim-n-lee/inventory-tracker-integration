@@ -15,6 +15,7 @@ import { ReturnStatement } from '@angular/compiler';
 export class LoginComponent implements OnInit {
   user: User;
   loginForm: FormGroup;
+  validMessage: string = "";
 
   constructor(private router: Router, private loginservice : AuthenticationService, private userService: UserService) {
     this.user = new User();
@@ -29,6 +30,12 @@ export class LoginComponent implements OnInit {
     
   }
 
+  //this method takes the values from the login form to check against the database
+  //if the login is valid, user is redirected to /dashboard
+  //TODO: user currently can just go to dashboard anyway without logging in
+      // need generate a JWT to store in sessionStorage to use for subsequent requests in spring boot
+        // then configure spring boot to require a valid JWT (JSON Web Token)
+        // then use this in Angular to set up guards to protect routes that should only be accessible to authenicated users
   submitLogin() {
     if (this.loginForm.valid) {
       this.user = (this.loginForm.value)
@@ -40,9 +47,12 @@ export class LoginComponent implements OnInit {
             console.log("next 2 lines in console verify sessionName as the username and verifies if user is logged in")
             console.log(sessionStorage.getItem("sessionName"))
             console.log(this.loginservice.isLoggedIn())
+
             this.router.navigate(['/dashboard']);
             return true;
           } else {
+            this.validMessage = "Invalid username or password.  Please try again.";
+            this.loginForm.reset();
             console.log ("didn't work")
           }
         }
