@@ -5,7 +5,11 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { AuthGuardService } from './services/auth-guard.service';
+
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
+
 
 
 const routes: Routes = [
@@ -26,20 +30,20 @@ const routes: Routes = [
   
   {
     path:'users',
-    component: UsersComponent
+    component: UsersComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'manufacturers/add',
     component: AddmanufacturerComponent
   }
-
-
 ];
 
 @NgModule({
