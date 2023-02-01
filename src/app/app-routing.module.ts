@@ -5,10 +5,11 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { ManufacturersComponent } from './components/manufacturers/manufacturers.component';
+import { ItemsComponent } from './components/items/items.component';
 import { AuthGuardService } from './services/auth-guard.service';
-
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
+import { AdditemComponent } from './components/additem/additem.component';
 
 
 
@@ -41,8 +42,23 @@ const routes: Routes = [
   },
 
   {
+    path: 'manufacturers',
+    component: ManufacturersComponent
+  },
+
+  {
+    path: 'items',
+    component: ItemsComponent
+  },
+
+  {
     path: 'manufacturers/add',
     component: AddmanufacturerComponent
+  },
+
+  {
+    path: 'items/add',
+    component: AdditemComponent
   }
 ];
 

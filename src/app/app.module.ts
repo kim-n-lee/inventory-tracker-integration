@@ -15,6 +15,11 @@ import { AuthenticationService } from './services/authentication.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
+import { Navbar1Component } from './components/navbar1/navbar1.component';
+import { Navbar2Component } from './components/navbar2/navbar2.component';
+import { ManufacturersComponent } from './components/manufacturers/manufacturers.component';
+import { ItemsComponent } from './components/items/items.component';
+import { AdditemComponent } from './components/additem/additem.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufa
     HomeComponent,
     LoginComponent,
     DashboardComponent,
-    AddmanufacturerComponent
+    AddmanufacturerComponent,
+    Navbar1Component,
+    Navbar2Component,
+    ManufacturersComponent,
+    ItemsComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,

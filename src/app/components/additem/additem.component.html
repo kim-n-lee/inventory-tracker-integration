@@ -1,0 +1,46 @@
+<app-navbar2></app-navbar2>
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Add New Item</h3>
+                        <div class="container">
+                            <form [formGroup]="addItemForm" (ngSubmit)="submitItem()" novalidate>
+                              <div *ngIf="validMessage != ''">
+                                <h3 class="has-info">{{validMessage}}</h3>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="name" placeholder= "Name" required autofocus/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="description" placeholder= "Description" required/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="category" placeholder= "Category"required/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="numberInInventory" placeholder= "Quantity"required/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" formControlName="numberMinimumToKeepOnHand" placeholder= "Minimum Amount"required/>
+                              </div>
+                              <div class="form-group">
+                                <select class="form-control" formControlName="manufacturer" name="my-select" [(ngModel)]="mySelect" required>
+                                  <option>Manufacturer</option>
+                                  <option [value]="item.id" *ngFor="let item of manufacturers">
+                                  {{item.name}}
+                                  </option>
+                                </select>
+                              </div>
+                            <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Add</button>
+                            <pre></pre>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

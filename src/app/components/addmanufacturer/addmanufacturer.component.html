@@ -1,40 +1,13 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="">
-        <img src="assets/logonav.png" alt="" width="120" height="60">
-      </a>
-    </div>
-     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link">All Inventory</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/additem">Add New Item</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Search</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Low Stock</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Logout</a>
-            </li>
-        </ul>
-    </div>
-  </nav>
- 
- 
-  <div class="form-body">
+<app-navbar2></app-navbar2>
+
+<div class="form-body">
     <div class="row">
         <div class="form-holder">
             <div class="form-content">
                 <div class="form-items">
-                    <h3>Add Manufacturer</h3>
-                   
+                    <h3>Add New Manufacturer</h3>
                         <div class="container">
-                            <form [formGroup]="addManufacturerForm" (ngSubmit)="submitAddManufacturer()" novalidate>
+                            <form [formGroup]="addManufacturerForm" (ngSubmit)="submitManufacturer()" novalidate>
                               <div *ngIf="validMessage != ''">
                                 <h3 class="has-info">{{validMessage}}</h3>
                               </div>
@@ -57,4 +30,4 @@
         </div>
     </div>
   </div>
- 
+  
