@@ -13,13 +13,13 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuardService } from './services/auth-guard.service';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
 import { Navbar1Component } from './components/navbar1/navbar1.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { ManufacturersComponent } from './components/manufacturers/manufacturers.component';
 import { ItemsComponent } from './components/items/items.component';
 import { AdditemComponent } from './components/additem/additem.component';
-
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { AdditemComponent } from './components/additem/additem.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UserService, AuthenticationService],
+  providers: [UserService, AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

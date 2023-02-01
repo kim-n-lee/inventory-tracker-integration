@@ -42,7 +42,12 @@ export class LoginComponent implements OnInit {
       this.loginservice.authenticate(this.user).subscribe( //subscribe allows us to access the data returned
         data => { // if the data is valid, this is where is will be handled
           if (data == true){ 
-            console.log(this.user)
+            this.loginForm.reset();
+            sessionStorage.setItem("sessionName", this.user.username) //sets a sessionName key in session storage, used to verify if user is logged in
+            console.log("next 2 lines in console verify sessionName as the username and verifies if user is logged in")
+            console.log(sessionStorage.getItem("sessionName"))
+            console.log(this.loginservice.isLoggedIn())
+
             this.router.navigate(['/dashboard']);
             return true;
           } else {
