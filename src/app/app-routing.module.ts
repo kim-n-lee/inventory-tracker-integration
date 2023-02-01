@@ -11,8 +11,6 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
 import { AdditemComponent } from './components/additem/additem.component';
 
-
-
 const routes: Routes = [
   {
     path:'',

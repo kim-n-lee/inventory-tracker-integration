@@ -1,4 +1,8 @@
+<app-navbar2></app-navbar2>
 <div class="container">
+    <button type="button" class="btn btn-primary">Add New Item</button>
+    <button class="btn btn-warning">Edit</button>
+    <button class="btn btn-danger">Delete</button>
     <table class="table table-bordered table-inverse">
       <tr>
         <th>Name</th>
@@ -6,7 +10,7 @@
         <th>Category</th>
         <th>Quantity</th>
         <th>Minimum Amount</th>
-        <th>Manufacturer</th>
+        <th>Action</th>
       </tr>
       <tr *ngFor="let item of items">
         <td>
@@ -24,8 +28,8 @@
         <td>
           {{item.numberMinimumToKeepOnHand}}
         </td>
-        <td>
-          {{item.manufacturer}}
+        <td><button class="btn btn-warning">Edit</button>
+        <button class="btn btn-danger">Delete</button>
         </td>
       </tr>
     </table>
