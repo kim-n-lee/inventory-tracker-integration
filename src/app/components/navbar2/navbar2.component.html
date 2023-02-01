@@ -8,19 +8,22 @@
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link">All Inventory</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/additem">Add New Item</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Search</a>
+                <a class="nav-link" href="/items">All Items</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link">Low Stock</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link">Logout</a>
+                <a class="nav-link" href="/items/add">Add Item</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/manufacturers/add">Add Manufacturer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login" (click)="submitLogout()">Logout</a>
             </li>
         </ul>
     </div>
