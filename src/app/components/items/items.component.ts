@@ -24,5 +24,6 @@ export class ItemsComponent implements OnInit {
       () => console.log('items loaded')
      );
   }
+  
 
 }
