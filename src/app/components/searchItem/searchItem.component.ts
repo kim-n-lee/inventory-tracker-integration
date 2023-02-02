@@ -3,11 +3,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ItemService } from 'src/app/services/item.service';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-searchItem',
+  templateUrl: './searchItem.component.html',
+  styleUrls: ['./searchItem.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchItemComponent implements OnInit {
   
   constructor(private logoutservice : AuthenticationService, private itemService : ItemService) { }
   
