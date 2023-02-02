@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ItemService } from 'src/app/services/item.service';
-//will need to create an item service, then import this
-//then, will add item service into constructor and add a getItems method to display on dashboard view
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class SearchComponent implements OnInit {
   
   constructor(private logoutservice : AuthenticationService, private itemService : ItemService) { }
   
