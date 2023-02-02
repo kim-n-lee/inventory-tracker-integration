@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-searchItem',
@@ -6,16 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchItem.component.css']
 })
 
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent {
   
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
   
-  public items;
+  // public items;
 
-  ngOnInit() {
-  }
+//   ngOnInit() {
+//     this.route.queryParams.subscribe()
+//  }
 
-  searchItems({searchTerm}: {searchTerm: string}){
-    console.log(searchTerm);
+  searchItems({searchTerm}: {searchTerm: string;}){
+    console.log(searchTerm)
+    this.router.navigate(['/search/results'], {queryParams: {search: searchTerm}})
   }
 }

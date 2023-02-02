@@ -10,7 +10,7 @@
       <div class="form-content">
         <div class="form-items">
           <div class="container"><div class="form-body">
-            <form #searchForm="ngForm" ngOnSubmit="searchItems(searchTerm.value)"> 
+            <form #searchForm="ngForm" (ngSubmit)="searchItems(searchForm.value)"> 
               <label for="searchTerm"></label>
               <input type="searchTerm" name="searchTerm" id="searchTerm" ngModel />
                 <div class="form-button mt-3">
