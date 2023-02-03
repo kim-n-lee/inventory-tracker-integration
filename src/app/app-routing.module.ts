@@ -10,6 +10,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
 import { AdditemComponent } from './components/additem/additem.component';
+import { ItemslistComponent } from './components/itemslist/itemslist.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,11 @@ const routes: Routes = [
   {
     path: 'items/add',
     component: AdditemComponent
+  },
+
+  {
+    path: 'items/all',
+    component: ItemslistComponent
   }
 ];
 

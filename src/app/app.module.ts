@@ -20,6 +20,8 @@ import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { ManufacturersComponent } from './components/manufacturers/manufacturers.component';
 import { ItemsComponent } from './components/items/items.component';
 import { AdditemComponent } from './components/additem/additem.component';
+import { ItemslistComponent } from './components/itemslist/itemslist.component';
+import { UpdateitemComponent } from './components/updateitem/updateitem.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AdditemComponent } from './components/additem/additem.component';
     Navbar2Component,
     ManufacturersComponent,
     ItemsComponent,
-    AdditemComponent
+    AdditemComponent,
+    ItemslistComponent,
+    UpdateitemComponent
   ],
   imports: [
     BrowserModule,
