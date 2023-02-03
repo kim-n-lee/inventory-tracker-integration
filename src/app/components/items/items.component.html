@@ -5,13 +5,13 @@
     <button class="btn btn-danger">Delete</button>
     <app-searchForm></app-searchForm>
     <table class="table table-bordered table-inverse">
+  <table>
       <tr>
         <th>Name</th>
         <th>Description</th>
         <th>Category</th>
         <th>Quantity</th>
         <th>Minimum Amount</th>
-        <th>Action</th>
       </tr>
       <tr *ngFor="let item of items">
         <td>
@@ -28,9 +28,6 @@
         </td>
         <td>
           {{item.numberMinimumToKeepOnHand}}
-        </td>
-        <td><button class="btn btn-warning">Edit</button>
-        <button class="btn btn-danger">Delete</button>
         </td>
       </tr>
     </table>

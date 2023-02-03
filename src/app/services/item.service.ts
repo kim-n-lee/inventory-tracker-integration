@@ -7,6 +7,7 @@ type ItemsResponse = {
   items: Item[];
 }
 
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 }
@@ -34,6 +35,10 @@ export class ItemService {
 
   search(searchTerm: string){
     return this.http.post("/server/search/results?searchTerm=" + `${searchTerm}`, httpOptions);
+    }
+
+  deleteItem(id: number) {
+    return this.http.delete(`/server/items/${id}`);
   }
 
 }

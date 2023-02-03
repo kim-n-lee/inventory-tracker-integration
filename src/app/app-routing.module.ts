@@ -12,6 +12,7 @@ import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufa
 import { AdditemComponent } from './components/additem/additem.component';
 import { SearchResultsComponent } from './components/searchResults/searchResults.component';
 import { SearchFormComponent } from './components/searchForm/searchForm.component';
+import { ItemslistComponent } from './components/itemslist/itemslist.component';
 
 const routes: Routes = [
   {
@@ -64,12 +65,16 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchFormComponent, 
-    
   },
 
   {
     path: 'search/results',
-    component: SearchResultsComponent
+    component: SearchResultsComponent,
+    }
+    
+    {
+    path: 'items/all',
+    component: ItemslistComponent
   }
 ];
 
