@@ -19,6 +19,7 @@ export class ItemService {
   constructor(private http:HttpClient) { }
 
   getItems() {
+    console.log("This is from itemService")
     return this.http.get('/server/items');
   }
 
@@ -32,7 +33,7 @@ export class ItemService {
   }
 
   search(searchTerm: string){
-    return this.http.get("http://localhost:8080/search/results?searchTerm={searchTerm}");
+    return this.http.post("/server/search/results?searchTerm=" + `${searchTerm}`, httpOptions);
   }
 
 }

@@ -12,20 +12,15 @@ import { ItemService } from 'src/app/services/item.service';
 export class SearchResultsComponent implements OnInit {
   
     searchTerm = "";
-    public items;
+    public items
 
   constructor(private route: ActivatedRoute, private itemService: ItemService) { }
   
-  
     ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.searchTerm = params["searchTerm"]
-      this.itemService.search(this.searchTerm).subscribe( 
-        data => {this.items = data},
-        err => console.error(err),
-        () => console.log("search results loaded")
-      )
-      })
+      this.route.queryParams.subscribe(params => {
+        this.searchTerm = params["searchTerm"],
+        console.log(this.searchTerm),
+        this.itemService.search(this.searchTerm).subscribe( data => {this.items = data}, () => console.log(this.items));
+      });
     }
-
-   }
+}

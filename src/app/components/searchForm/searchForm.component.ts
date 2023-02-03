@@ -13,7 +13,6 @@ constructor(private router: Router) { }
 
 
  searchFunction({searchTerm}: {searchTerm: string;}) {
-  console.log(searchTerm)
   this.router.navigate(['/search/results'], {queryParams: { searchTerm: searchTerm}})
  }
 

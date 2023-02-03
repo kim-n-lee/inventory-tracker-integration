@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   this.itemService.getItems().subscribe(
   data => {this.items = data},
       err => console.error(err),
-      () => console.log('items loaded')
+      () => console.log(this.items)
      );
   }
 
