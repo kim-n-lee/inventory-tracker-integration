@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +13,7 @@ export class RegistrationComponent implements OnInit {
   userForm: FormGroup;
   validMessage: string = "";
 
-  constructor(private userService: UserService){}
+  constructor(private router: Router, private userService: UserService){}
 
   ngOnInit() {
     this.userForm = new FormGroup({
@@ -32,6 +33,8 @@ export class RegistrationComponent implements OnInit {
       this.userService.createUserRegistration(this.userForm.value).subscribe(
         data => {
           this.userForm.reset();
+          sessionStorage.setItem("sessionName", this.userForm.value.username);
+          this.router.navigate(['/dashboard']);
           return true;
         },
         error => {
