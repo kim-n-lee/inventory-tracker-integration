@@ -31,4 +31,15 @@ export class ItemService {
     return this.http.delete(`/server/items/${id}`);
   }
 
+  // updateItem(id, item) {
+  //   return this.http.put(`/server/items/${id}`, item);
+  // }
+
+  updateItem(item){
+    let body = JSON.stringify(item);
+    return this.http.post('/server/items/update', body, httpOptions);
+  }
+
+
+
 }
