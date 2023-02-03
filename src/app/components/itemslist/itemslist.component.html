@@ -26,11 +26,50 @@
           <td>{{item.numberInInventory}}</td>
           <td>{{item.numberMinimumToKeepOnHand}}</td>
           
-            <td><button style='margin-right:16px' onclick="window. location.href = '/items/update';" class="btn btn-success" style="margin-left: 10px">Edit</button>
+            <td>
+              <button style='margin-right:16px' onclick="window. location.href = '/items/update';" class="btn btn-success" style="margin-left: 10px">Edit</button>
               <button style='margin-right:16px' (click)="deleteItem(item.id)" class="btn btn-danger">Delete</button>
+              <button style='margin-right:16px' data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success" style="margin-left: 10px">Edit modal</button>
             </td>
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Item</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Description</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Category</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Quantity</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Minimum Amount</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
