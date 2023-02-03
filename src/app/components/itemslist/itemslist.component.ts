@@ -24,17 +24,11 @@ export class ItemslistComponent implements OnInit {
        );
     }
 
-  // deleteItem(id:number) {
-  // this.itemService.deleteItem(id).subscribe(
-  // data => {console.log(data);
-  // this.items=this.itemService.getItems();
-  // },
-  // error => console.error(error));
-  // }
-
-  // updateItem(id:number) {
-  //   this.router.navigate(['update', id]);
-  // }
+    deleteItem(id: number) {
+      this.itemService.deleteItem(id).subscribe(() => {
+        this.items = this.items.filter(item => item.id !== id);
+      });
+    }
 
 }
 
