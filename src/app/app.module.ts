@@ -20,7 +20,8 @@ import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { ManufacturersComponent } from './components/manufacturers/manufacturers.component';
 import { ItemsComponent } from './components/items/items.component';
 import { AdditemComponent } from './components/additem/additem.component';
-import { SearchItemComponent } from './components/searchItem/searchItem.component';
+import { SearchFormComponent } from './components/searchForm/searchForm.component';
+import { SearchResultsComponent } from './components/searchResults/searchResults.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SearchItemComponent } from './components/searchItem/searchItem.componen
     ManufacturersComponent,
     ItemsComponent,
     AdditemComponent,
-    SearchItemComponent
+    SearchFormComponent, 
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

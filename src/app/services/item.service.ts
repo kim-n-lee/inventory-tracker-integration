@@ -26,4 +26,8 @@ export class ItemService {
     return this.http.post('/server/items/add', body, httpOptions);
   }
 
+  search(searchTerm: string){
+    return this.http.get('/server/search?search=${searchTerm}')
+  }
+
 }

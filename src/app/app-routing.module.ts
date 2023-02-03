@@ -10,7 +10,8 @@ import { ItemsComponent } from './components/items/items.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
 import { AdditemComponent } from './components/additem/additem.component';
-import { SearchItemComponent } from './components/searchItem/searchItem.component';
+import { SearchResultsComponent } from './components/searchResults/searchResults.component';
+import { SearchFormComponent } from './components/searchForm/searchForm.component';
 
 const routes: Routes = [
   {
@@ -61,8 +62,14 @@ const routes: Routes = [
   },
 
   {
+    path: 'search',
+    component: SearchFormComponent, 
+    
+  },
+
+  {
     path: 'search/results',
-    component: SearchItemComponent
+    component: SearchResultsComponent
   }
 ];
 
