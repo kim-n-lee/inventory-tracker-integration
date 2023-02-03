@@ -14,7 +14,7 @@ const httpOptions = {
 export class ItemService {
 
   constructor(private http:HttpClient) { }
-  baseUrl: string = 'http://localhost:8080/items';
+  // baseUrl: string = 'http://localhost:8080/items';
 
   getItems() {
     return this.http.get('/server/items');
@@ -34,8 +34,12 @@ export class ItemService {
   //   return this.http.put('/server/items/update', body, httpOptions);
   // }
 
+  // updateItem(id: number, item: Item): Observable<ApiResponse> {
+  //   return this.http.put<ApiResponse>(this.baseUrl + item.id, item);
+  // }
+
   // deleteItem(id: number): Observable<ApiResponse> {
-  //   return this.http.delete<ApiResponse>(this.baseUrl + id);
+  // return this.http.delete<ApiResponse>(this.baseUrl + id);
   // }
 
 }
