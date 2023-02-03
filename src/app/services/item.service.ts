@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Item } from '../item';
+
+type ItemsResponse = {
+  items: Item[];
+}
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -27,7 +32,7 @@ export class ItemService {
   }
 
   search(searchTerm: string){
-    return this.http.get('/server/search?search=${searchTerm}')
+    return this.http.get("http://localhost:8080/search/results?searchTerm={searchTerm}");
   }
 
 }

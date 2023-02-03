@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 
 export class SearchFormComponent {
   
-  constructor(private router: Router){
+constructor(private router: Router) { }
 
-  }
 
-  searchFunction({searchTerm}: {searchTerm: string;}){
-    console.log(searchTerm)
-    this.router.navigate(['/search/results'], {queryParams: { search: searchTerm}})
-  }
+ searchFunction({searchTerm}: {searchTerm: string;}) {
+  console.log(searchTerm)
+  this.router.navigate(['/search/results'], {queryParams: { searchTerm: searchTerm}})
+ }
+
 }

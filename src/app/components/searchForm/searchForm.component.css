@@ -4,3 +4,8 @@ body {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
 }
+
+form {
+    display: -webkit-inline-flex
+    
+}

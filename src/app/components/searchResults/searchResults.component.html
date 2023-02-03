@@ -1,26 +1,37 @@
 <app-navbar2></app-navbar2>
 
-<p>Search</p>
+<p>Search Results</p>
 
 <app-searchForm></app-searchForm>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Item Name</th>
-        <th scope="col">Category</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Min Amount</th>
-        <!-- <th scope="col">Manufacturer</th> -->
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of items">
-      <td>{{item.name}}</td>
-      <td>{{item.category}}</td>
-      <td>{{item.numberInInventory}}</td>
-      <td>{{item.numberMinimumToKeepOnHand}}</td>
-      <!-- <td>{{item.manufacturerid}}</td> -->
-      </tr>
-    </tbody>
-  </table>
+<table class="table table-bordered table-inverse">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Minimum Amount</th>
+  </tr>
+  <tr *ngFor="let item of items">
+    <td>
+      {{item.name}}
+    </td>
+    <td>
+      {{item.description}}
+    </td>
+    <td>
+      {{item.category}}
+    </td>
+    <td>
+      {{item.numberInInventory}}
+    </td>
+    <td>
+      {{item.numberMinimumToKeepOnHand}}
+    </td>
+  </tr>
+</table>
+
+<ng-template #empty>
+  <p>No results found for that search term. Please try again.</p>
+</ng-template>
+
