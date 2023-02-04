@@ -70,9 +70,9 @@ const routes: Routes = [
   {
     path: 'search/results',
     component: SearchResultsComponent,
-    }
+    },
     
-    {
+  {
     path: 'items/all',
     component: ItemslistComponent
   }
