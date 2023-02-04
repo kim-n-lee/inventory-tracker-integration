@@ -26,7 +26,9 @@ export class RegistrationComponent implements OnInit {
   }
 
   submitRegistration() {
-    if (this.userForm.value.password!==this.userForm.value.confirmPassword){
+    if(this.userService.isUsernameNotAvailable(this.userForm.value.username)){
+      this.validMessage="This username exists. Try another username!";
+    } else if (this.userForm.value.password!==this.userForm.value.confirmPassword){
       this.validMessage = "Passwords must match!";
     } else if (this.userForm.valid) {
       this.validMessage = "New user has been registered. Thank you!";

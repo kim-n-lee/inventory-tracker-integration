@@ -24,6 +24,9 @@ export class UserService {
     let body = JSON.stringify(user);
     return this.http.post('/server/users/add', body, httpOptions);
   }
+  isUsernameNotAvailable(username: string){
+    return this.http.get('/server/users/check' + username);
+  }
 }
 
 
