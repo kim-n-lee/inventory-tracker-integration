@@ -23,8 +23,8 @@ export class ItemService {
   }
 
   addItem(item){
-    let body = JSON.stringify(item);
-    return this.http.post('/server/items/add', body, httpOptions);
+    // let body = JSON.stringify(item);
+    return this.http.post('/server/items/add', item, httpOptions);
   }
 
   deleteItem(id: number) {
