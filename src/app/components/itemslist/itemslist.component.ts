@@ -34,8 +34,21 @@ export class ItemslistComponent implements OnInit {
 
 
   updateItem(id:number) {
-    this.router.navigate(['/items/update', id]);
-  }
+      this.router.navigate(['/items/update']);
+    }
+
+      //Get the product based on the id
+      //Populate the form with the product details
+       //Change the button value to update item
+
+    // updateItem(item) {
+    //   this.itemService.updateItem(item.id, item)
+    //     .subscribe(updatedItem => {
+    //       // Update the item in the table
+    //       const index = this.items.findIndex(i => i.id === item.id);
+    //       this.items[index] = updatedItem;
+    //     });
+    // }
 
 
 }

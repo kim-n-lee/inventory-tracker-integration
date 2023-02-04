@@ -19,6 +19,7 @@ export class UpdateitemComponent implements OnInit {
 
   id: number;
   item: Item;
+  //item: any;
   apiResponse:ApiResponse;
 
   constructor(private itemService: ItemService, private route: ActivatedRoute,private router: Router) { }
