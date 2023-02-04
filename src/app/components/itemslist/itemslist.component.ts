@@ -34,7 +34,7 @@ export class ItemslistComponent implements OnInit {
 
 
   updateItem(id:number) {
-      this.router.navigate(['/items/update']);
+      this.router.navigate(['/items/update', id]);
     }
 
       //Get the product based on the id

@@ -18,16 +18,13 @@ import { Router } from '@angular/router';
 export class UpdateitemComponent implements OnInit {
 
   id: number;
-  item: Item;
-  //item: any;
+  item: Item = new Item();
   apiResponse:ApiResponse;
 
   constructor(private itemService: ItemService, private route: ActivatedRoute,private router: Router) { }
 
 
-  ngOnInit() {
-    this.item = new Item();
-
+  ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.itemService.getItemById(this.id)
       .subscribe(data => {

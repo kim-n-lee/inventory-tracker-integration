@@ -67,7 +67,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'items/update',
+    path: 'items/update/:id',
     component: UpdateitemComponent
   }
 
