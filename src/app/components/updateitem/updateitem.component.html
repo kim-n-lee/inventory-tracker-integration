@@ -7,38 +7,31 @@
                 <div class="form-items">
                     <h3>Update Item</h3>
                         <div class="container">
-                            <form [formGroup]="updateItemForm" (ngSubmit)="submitUpdateItem()" novalidate>
+                            <form (ngSubmit)="onSubmit()" novalidate>
                               <div *ngIf="validMessage != ''">
                                 <h3 class="has-info">{{validMessage}}</h3>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" formControlName="name" placeholder= "Name" required autofocus/>
+                                <input type="text" class="form-control" id="name" placeholder= "Name" [(ngModel)]="item.name" required autofocus/>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" formControlName="description" placeholder= "Description" required/>
+                                <input type="text" class="form-control" id="description" placeholder= "Description" [(ngModel)]="item.description" required/>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" formControlName="category" placeholder= "Category"required/>
+                                <input type="text" class="form-control" id="category" placeholder= "Category" [(ngModel)]="item.category" required/>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" formControlName="numberInInventory" placeholder= "Quantity"required/>
+                                <input type="text" class="form-control" id="numberInInventory" placeholder= "Quantity" [(ngModel)]="item.numberInInventory" required/>
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" formControlName="numberMinimumToKeepOnHand" placeholder= "Minimum Amount"required/>
+                                <input type="text" class="form-control" id="numberMinimumToKeepOnHand" placeholder= "Minimum Amount" [(ngModel)]="item.numberMinimumToKeepOnHand" required/>
                               </div>
-                              <div class="form-group">
-                                <select class="form-control" formControlName="manufacturer" name="my-select" [(ngModel)]="mySelect" required>
-                                  <option>Manufacturer</option>
-                                  <option [value]="item.id" *ngFor="let item of manufacturers">
-                                  {{item.name}}
-                                  </option>
-                                </select>
-                              </div>
-                            <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-primary">Update</button>
-                            <pre></pre>
-                        </div>
+                            <div>
+                            <button style='margin-right:16px' class="btn btn-success">Submit</button>
+                            <button style='margin-right:16px' (click)="list()" class="btn btn-success">Back to Items</button>
+                          </div>
                     </form>
+                  </div>
                 </div>
             </div>
         </div>

@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { Item } from 'src/app/item';
+import { ApiResponse } from 'src/app/api.response';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-updateitem',
@@ -11,52 +16,48 @@ import { ManufacturerService } from 'src/app/services/manufacturer.service';
   styleUrls: ['./updateitem.component.css']
 })
 export class UpdateitemComponent implements OnInit {
-  updateItemForm: FormGroup;
-  validMessage: string = "";
 
-  constructor(private itemService: ItemService, private manufacturerService: ManufacturerService) { }
+  id: number;
+  item: Item;
+  apiResponse:ApiResponse;
 
-  public manufacturers: any;
+  constructor(private itemService: ItemService, private route: ActivatedRoute,private router: Router) { }
 
-  get() {
-    this.manufacturerService.getManufacturers().subscribe(res=>
-      {
-        this.manufacturers=res;
-      }
-    );
-      
-  }
 
   ngOnInit() {
-    this.get();
-    this.updateItemForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      category: new FormControl('', Validators.required),
-      numberInInventory: new FormControl('', Validators.required),
-      numberMinimumToKeepOnHand: new FormControl('', Validators.required),
-      //manufacturer: new FormControl('', Validators.required),
-  });
+    this.item = new Item();
+
+    this.id = this.route.snapshot.params['id'];
+    this.itemService.getItemById(this.id)
+      .subscribe(data => {
+        console.log(data)
+        this.item = data;
+      }, error => console.log(error));
   }
 
-  submitUpdateItem() {
-    if (this.updateItemForm.valid) {
-      this.validMessage = "Item updated!";
-      this.itemService.updateItem(this.updateItemForm.value).subscribe(
-        data => {
-          this.updateItemForm.reset();
-          return true;
-        },
-        error => {
-          return throwError(error);
-        }
-      )
-    } else {
-      this.validMessage = "Please fill out the form before submitting!"
+  onSubmit() {
+    this.itemService.updateItem(this.id, this.item)
+      .subscribe(data => console.log(data), error => console.log(error));
+    this.item = new Item();
+    this.router.navigate(['/items/all']);
     }
+
+  
+  list(){
+    this.router.navigate(['items/all']);
   }
+
+
 
 }
+
+
+
+
+
+
+
+ 
 
 
 
