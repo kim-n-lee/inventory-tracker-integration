@@ -1,0 +1,27 @@
+<app-navbar2></app-navbar2>
+
+<div class="header">
+    <h1>Welcome!</h1>
+</div>
+
+<p>Inventory at a glance</p>
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Item Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Min Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+      <td>{{item.name}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.numberInInventory}}</td>
+      <td>{{item.numberMinimumToKeepOnHand}}</td>
+      </tr>
+    </tbody>
+  </table>
