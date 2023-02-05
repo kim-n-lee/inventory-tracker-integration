@@ -1,15 +1,14 @@
 <app-navbar2></app-navbar2>
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2>Items List</h2>
+    <h2>Search Results</h2>
   </div>
   <app-searchForm></app-searchForm>
   <div class="panel-body">
-    <table cellspacing="0" width="100%">
+    <table *ngIf="items.length > 0; else empty" cellspacing="0" width="100%">
 
       <thead>
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Description</th>
           <th>Category</th>
@@ -21,7 +20,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of items">
-          <td>{{item.id}}</td>
           <td>{{item.name}}</td>
           <td>{{item.description}}</td>
           <td>{{item.category}}</td>
@@ -29,8 +27,7 @@
           <td>{{item.numberMinimumToKeepOnHand}}</td>
           <td>{{item.manufacturerPhoneNumber}}</td>
           
-            <td>
-              <button style='margin-right:16px' (click)="updateItem(item.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
+            <td><button style='margin-right:16px' (click)="updateItem(item.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
               <button style='margin-right:16px' (click)="deleteItem(item.id)" class="btn btn-danger">Delete</button>
             </td>
         </tr>
@@ -39,3 +36,4 @@
   </div>
 </div>
 
+<ng-template #empty><p>No results yet. Please enter a search.</p></ng-template>

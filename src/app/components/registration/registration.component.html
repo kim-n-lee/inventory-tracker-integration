@@ -12,23 +12,72 @@
                             <div *ngIf="validMessage != ''">
                               <h3 class="has-info">{{validMessage}}</h3>
                             </div>
+
+
                             <div class="form-group">
-                              <input type="text" class="form-control" formControlName="username" placeholder= "Username" required autofocus/>
+                              <input type="text" id="username" class="form-control" formControlName="username" placeholder= "Username" required autofocus/>
                             </div>
+                            <div
+                            *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
+                            <!--<div [hidden]="!username.errors.required"> 
+                              First Name is required
+                            </div> -->
+                            <div [hidden]="!username.errors.minlength">
+                              Min Length is 5
+                            </div>
+                            <div [hidden]="!username.errors.maxlength">
+                              Max Length is 20
+                            </div>
+                            </div>
+
+
                             <div class="form-group">
-                              <input type="email" class="form-control" formControlName="email" placeholder= "Email" required/>
+                              <input type="email" id="email" class="form-control" formControlName="email" placeholder= "Email" required />
                             </div>
+                            <div *ngIf="!email.valid && (email.dirty ||email.touched)">
+                            <!--<div [hidden]="!email.errors.required"> 
+                                email is required
+                              </div> -->
+                              <div [hidden]="!email.errors.email">
+                                invalid email id
+                              </div>
+                            </div>
+
+
                             <div class="form-group">
-                              <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number"required/>
+                              <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number" required/>
                             </div>
+                            <div *ngIf="!phoneNumber.valid && (phoneNumber.dirty ||phoneNumber.touched)">
+                              <!--<div [hidden]="!phoneNumber.errors.required"> 
+                                phoneNumber is required
+                              </div> -->
+                              <div [hidden]="!phoneNumber.errors.pattern">
+                                Invalid phone number
+                              </div>
+                            </div>
+
+
                             <div class="form-group">
-                              <input type="password" class="form-control" formControlName="password" placeholder= "Password" required/>
+                              <input type="password" id="password" class="form-control" formControlName="password" placeholder= "Password" required/>
                             </div>
+                            <!--<div *ngIf="!password.valid && (password.dirty ||password.touched)">
+                              <div [hidden]="!password.errors.required"> 
+                                password is required
+                              </div> 
+                            </div> -->
+
+
                             <div class="form-group">
                               <input type="password" class="form-control" formControlName="confirmPassword" placeholder= "Confirm Password" required/>
                             </div>
+                           <!-- <div *ngIf="!confirmPassword.valid && (confirmPassword.dirty ||confirmPassword.touched)">
+                               <div [hidden]="!confirmPassword.errors.required"> 
+                                 Confirm password is required
+                               </div> 
+                             </div>-->
+                           
                           <div class="form-button mt-3">
-                          <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                          <button id="submit" type="submit" [disabled]="!userForm.valid"class="btn btn-primary">Register</button>
                           <pre></pre>
                       </div>
                       <p class="text-center">Already have an account? <a href="/login">Log In here</a> </p>

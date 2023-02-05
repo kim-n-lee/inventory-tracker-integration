@@ -4,6 +4,10 @@ import { Observable } from 'rxjs';
 import { Item } from '../item';
 import { ApiResponse } from '../api.response';
 
+type ItemsResponse = {
+  items: Item[];
+}
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 }
@@ -28,8 +32,8 @@ export class ItemService {
   }
 
   addItem(item){
-    let body = JSON.stringify(item);
-    return this.http.post('/server/items/add', body, httpOptions);
+    // let body = JSON.stringify(item);
+    return this.http.post('/server/items/add', item, httpOptions);
   }
 
   deleteItem(id: number) {
@@ -37,7 +41,11 @@ export class ItemService {
   }
 
   updateItem(id: number, item: Item) {
-    return this.http.put( `/server/items/`+ item.id, item);
+    return this.http.put( `/server/items/id/`+ item.id, item);
   }
+
+  search(searchTerm: string){
+    return this.http.post("/server/search/results?searchTerm=" + `${searchTerm}`, httpOptions);
+    }
 
 }

@@ -12,6 +12,8 @@ import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufa
 import { AdditemComponent } from './components/additem/additem.component';
 import { ItemslistComponent } from './components/itemslist/itemslist.component';
 import { UpdateitemComponent } from './components/updateitem/updateitem.component';
+import { SearchFormComponent } from './components/searchForm/searchForm.component';
+import { SearchResultsComponent } from './components/searchResults/searchResults.component';
 
 const routes: Routes = [
   {
@@ -69,6 +71,16 @@ const routes: Routes = [
   {
     path: 'items/update/:id',
     component: UpdateitemComponent
+  }, 
+
+  {
+    path: 'search',
+    component: SearchFormComponent
+  },
+
+  {
+    path: 'search/results',
+    component: SearchResultsComponent
   }
 
 
