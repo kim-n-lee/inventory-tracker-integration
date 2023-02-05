@@ -41,7 +41,7 @@ export class ItemService {
   }
 
   updateItem(id: number, item: Item) {
-    return this.http.put( `/server/items/id/`+ item.id, item);
+    return this.http.put( `/server/items/`+ item.id, item);
   }
 
   search(searchTerm: string){
