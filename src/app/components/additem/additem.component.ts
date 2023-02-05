@@ -22,6 +22,7 @@ export class AdditemComponent implements OnInit {
     this.manufacturerService.getManufacturers().subscribe(res=>
       {
         this.manufacturers=res;
+        // console.log(this.manufacturers);
       }
     );
       
@@ -35,7 +36,7 @@ export class AdditemComponent implements OnInit {
       category: new FormControl('', Validators.required),
       numberInInventory: new FormControl('', Validators.required),
       numberMinimumToKeepOnHand: new FormControl('', Validators.required),
-      //manufacturer: new FormControl('', Validators.required),
+      manufacturer: new FormControl('', Validators.required),
   });
   
 }
@@ -43,6 +44,7 @@ export class AdditemComponent implements OnInit {
 submitItem() {
    if (this.addItemForm.valid) {
      this.validMessage = "New item added!";
+     console.log(this.addItemForm.value);
      this.itemService.addItem(this.addItemForm.value).subscribe(
        data => {
          this.addItemForm.reset();
