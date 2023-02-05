@@ -1,1 +1,40 @@
-<p>updateitem works!</p>
+<app-navbar2></app-navbar2>
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Update Item</h3>
+                        <div class="container">
+                            <form (ngSubmit)="onSubmit()">
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="id" [(ngModel)]="item.id" name="id" placeholder="ID"/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="name" [(ngModel)]="item.name" name="name" placeholder="Name"/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="description" [(ngModel)]="item.description" name="description" placeholder="Description"/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="category" [(ngModel)]="item.category" name="category" placeholder="Category"/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="numberInInventory" [(ngModel)]="item.numberInInventory" name="numberInInventory" placeholder="Quantity"/>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" id="numberMinimumToKeepOnHand" [(ngModel)]="item.numberMinimumToKeepOnHand" name="numberMinimumToKeepOnHand" placeholder="Minimum Amount"/>
+                              </div>
+                            <div>
+                            <button style='margin-right:16px' (click)="updateItem(item.id)" class="btn btn-success">Update</button>
+                            <button style='margin-right:16px' (click)="list()" class="btn btn-success">Back to Items</button>
+                          </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

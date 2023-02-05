@@ -11,6 +11,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AddmanufacturerComponent } from './components/addmanufacturer/addmanufacturer.component';
 import { AdditemComponent } from './components/additem/additem.component';
 import { ItemslistComponent } from './components/itemslist/itemslist.component';
+import { UpdateitemComponent } from './components/updateitem/updateitem.component';
 import { SearchFormComponent } from './components/searchForm/searchForm.component';
 import { SearchResultsComponent } from './components/searchResults/searchResults.component';
 
@@ -65,6 +66,11 @@ const routes: Routes = [
   {
     path: 'items/all',
     component: ItemslistComponent
+  },
+
+  {
+    path: 'items/update/:id',
+    component: UpdateitemComponent
   }, 
 
   {
@@ -76,6 +82,8 @@ const routes: Routes = [
     path: 'search/results',
     component: SearchResultsComponent
   }
+
+
 ];
 
 @NgModule({
