@@ -20,7 +20,7 @@ export class ItemService {
   }
 
   getItemById(id: number): Observable<Item> {
-    return this.http.get<Item>(`/server/items/${id}`);
+    return this.http.get<Item>(`/server/items/id/${id}`);
   }
 
   getManufacturers() {
