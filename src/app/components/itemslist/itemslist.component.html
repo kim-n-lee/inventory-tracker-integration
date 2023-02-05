@@ -3,6 +3,7 @@
   <div class="panel-heading">
     <h2>Items List</h2>
   </div>
+  <app-searchForm></app-searchForm>
   <div class="panel-body">
     <table cellspacing="0" width="100%">
 
@@ -13,6 +14,7 @@
           <th>Category</th>
           <th>Quantity</th>
           <th>Minimum Amount</th>
+          <th>Order Contact</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -23,6 +25,7 @@
           <td>{{item.category}}</td>
           <td>{{item.numberInInventory}}</td>
           <td>{{item.numberMinimumToKeepOnHand}}</td>
+          <td>{{item.manufacturerPhoneNumber}}</td>
           
             <td><button style='margin-right:16px' (click)="updateItem(item.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
               <button style='margin-right:16px' (click)="deleteItem(item.id)" class="btn btn-danger">Delete</button>

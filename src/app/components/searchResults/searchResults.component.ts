@@ -20,7 +20,13 @@ export class SearchResultsComponent implements OnInit {
       this.route.queryParams.subscribe(params => {
         this.searchTerm = params["searchTerm"],
         console.log(this.searchTerm),
-        this.itemService.search(this.searchTerm).subscribe( data => {this.items = data}, () => console.log(this.items));
+        this.itemService.search(this.searchTerm).subscribe( data => {this.items = data}, data => console.log(this.items), () => console.log(this.items));
+      });
+    }
+
+    deleteItem(id: number) {
+      this.itemService.deleteItem(id).subscribe(() => {
+        this.items = this.items.filter(item => item.id !== id);
       });
     }
 }

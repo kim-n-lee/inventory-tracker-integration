@@ -5,19 +5,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-table {
-    width: 60%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .header {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
-    font-size: 30px;
-  }
+p {
+  text-align: center;
+  font-size: 30px;
+}
