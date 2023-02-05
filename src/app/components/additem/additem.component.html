@@ -17,8 +17,15 @@
                               <div class="form-group">
                                 <input type="text" class="form-control" formControlName="description" placeholder= "Description" required/>
                               </div>
+
                               <div class="form-group">
-                                <input type="text" class="form-control" formControlName="category" placeholder= "Category"required/>
+                                <select class="form-control" formControlName="category" required>
+                                  <option value="">Category</option>
+                                  <option *ngFor="let category of categories"
+                                          [value]="category">
+                                          {{category}}
+                                  </option>
+                                </select>
                               </div>
                               <div class="form-group">
                                 <input type="text" class="form-control" formControlName="numberInInventory" placeholder= "Quantity"required/>
@@ -27,8 +34,8 @@
                                 <input type="text" class="form-control" formControlName="numberMinimumToKeepOnHand" placeholder= "Minimum Amount"required/>
                               </div> 
                               <div class="form-group">
-                                <p>Select manufacturer:</p>
                                 <select class="form-control" formControlName="manufacturer" required>
+                                  <option value="">Manufacturer</option>
                                   <option [ngValue]="manufacturer" *ngFor="let manufacturer of manufacturers">
                                   {{manufacturer.name}}
                                   </option>
