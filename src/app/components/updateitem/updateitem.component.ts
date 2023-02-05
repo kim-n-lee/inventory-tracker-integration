@@ -24,7 +24,7 @@ export class UpdateitemComponent implements OnInit {
   constructor(private itemService: ItemService, private route: ActivatedRoute,private router: Router) { }
 
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.itemService.getItemById(this.id)
       .subscribe(data => {
@@ -34,18 +34,16 @@ export class UpdateitemComponent implements OnInit {
   }
 
   onSubmit() {
-    this.itemService.updateItem(this.id, this.item)
+    console.log("This is the id: " + this.id);
+    this.itemService.updateItem(this.id, {"id": this.id, "name": this.item.name, "category": this.item.category, "description": this.item.description, "numberInInventory": this.item.numberInInventory, "numberMinimumToKeepOnHand": this.item.numberInInventory, "manufacturer": this.item.manufacturer})
       .subscribe(data => console.log(data), error => console.log(error));
     this.item = new Item();
     this.router.navigate(['/items/all']);
     }
 
-  
   list(){
     this.router.navigate(['items/all']);
   }
-
-
 
 }
 

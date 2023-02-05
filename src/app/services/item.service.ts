@@ -36,19 +36,8 @@ export class ItemService {
     return this.http.delete(`/server/items/${id}`);
   }
 
-  updateItem(id: number, item: Item): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>( `/server/items/`+ item.id, item);
+  updateItem(id: number, item: Item) {
+    return this.http.put( `/server/items/`+ item.id, item);
   }
-
-  // updateItem(id, item) {
-  //   return this.http.put(`/server/items/${id}`, item);
-  // }
-
-  // updateItem(item){
-  //   let body = JSON.stringify(item);
-  //   return this.http.post('/server/items/update', body, httpOptions);
-  // }
-
-
 
 }
