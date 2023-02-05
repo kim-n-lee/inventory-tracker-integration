@@ -1,11 +1,11 @@
 <app-navbar2></app-navbar2>
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2>Items List</h2>
+    <h2>Search Results</h2>
   </div>
   <app-searchForm></app-searchForm>
   <div class="panel-body">
-    <table cellspacing="0" width="100%">
+    <table *ngIf="items.length > 0; else empty" cellspacing="0" width="100%">
 
       <thead>
         <tr>
@@ -35,3 +35,5 @@
     </table>
   </div>
 </div>
+
+<ng-template #empty><p>No results yet. Please enter a search.</p></ng-template>

@@ -1,0 +1,5 @@
+<form #searchForm="ngForm" class="search-form" (ngSubmit)="searchFunction(searchForm.value)">
+  <label for="search"></label>
+  <input type="searchTerm" class="form control" name="searchTerm" id="searchTerm" ngModel />
+  <button button style='margin-right:16px' style="margin-left: 10px" id="submit" type="submit" class="btn btn-primary">Search</button>
+  </form>

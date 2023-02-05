@@ -3,6 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Item } from '../item';
 
+type ItemsResponse = {
+  items: Item[];
+}
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 }
@@ -31,4 +35,7 @@ export class ItemService {
     return this.http.delete(`/server/items/${id}`);
   }
 
+  search(searchTerm: string){
+    return this.http.post("/server/search/results?searchTerm=" + `${searchTerm}`, httpOptions);
+    }
 }
