@@ -1,0 +1,11 @@
+.form-inline {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 30%;
+    justify-content: center;
+  }
+
+
