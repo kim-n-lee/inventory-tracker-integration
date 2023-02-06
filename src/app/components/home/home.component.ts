@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  demo(){
+  demoLogin(){
+    console.log("demo link working")
     sessionStorage.setItem("sessionName", "demo");
     this.router.navigate(['/dashboard']);
   }
