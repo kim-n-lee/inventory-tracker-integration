@@ -19,7 +19,11 @@ export class ItemService {
   constructor(private http:HttpClient) { }
 
   getItems() {
-    return this.http.get('/server/items');
+    return this.http.get('/server/items/');
+  }
+
+  getLowStock() {
+    return this.http.get('/server/items/dashboard/toOrder');
   }
 
   getItemById(id: number): Observable<Item> {

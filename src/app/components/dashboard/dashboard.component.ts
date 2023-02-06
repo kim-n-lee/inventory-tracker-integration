@@ -8,17 +8,18 @@ import { ItemService } from 'src/app/services/item.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
+
   constructor(private logoutservice : AuthenticationService, private itemService : ItemService) { }
-  
+
   public items;
+  public username = sessionStorage.getItem('sessionName');
 
   ngOnInit() {
     this.get();
   }
 
   get(){
-  this.itemService.getItems().subscribe(
+  this.itemService.getLowStock().subscribe(
   data => {this.items = data},
       err => console.error(err),
       () => console.log('items loaded')
