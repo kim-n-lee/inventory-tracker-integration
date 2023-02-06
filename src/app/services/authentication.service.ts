@@ -26,7 +26,9 @@ export class AuthenticationService {
     }
 
     logout(){
-      sessionStorage.removeItem("sessionName");
+      while (sessionStorage.getItem("sessionName")){
+        sessionStorage.removeItem("sessionName");
+      }
       console.log(this.isLoggedIn());
       return this.httpClient.get(this.baseUrl+'/logout')
     }
