@@ -11,6 +11,10 @@ import { ManufacturerService } from 'src/app/services/manufacturer.service';
   styleUrls: ['./additem.component.css']
 })
 export class AdditemComponent implements OnInit {
+
+  categories:string[] = [
+    'Baking Supplies', 'Cereals', 'Dairy', 'Drinks', 'Fruits/Vegetables', 'Oils', 'Proteins', 'Sweets', 'Tools/Appliances'];
+
   addItemForm: FormGroup;
   validMessage: string = "";
 
