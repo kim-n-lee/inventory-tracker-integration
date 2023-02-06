@@ -24,12 +24,10 @@ export class DashboardComponent implements OnInit {
       err => console.error(err),
       () => console.log('items loaded')
      );
-  this.itemService.formatPhoneNumber(manufacturerPhoneNumber)
   }
 
   submitLogout() {
     console.log("logout works!")
     this.logoutservice.logout();
   }
-
 }
