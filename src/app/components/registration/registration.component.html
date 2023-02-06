@@ -1,5 +1,4 @@
 <app-navbar1></app-navbar1>
-
 <div class="form-body">
   <div class="row">
       <div class="form-holder">
@@ -12,8 +11,6 @@
                             <div *ngIf="validMessage != ''">
                               <h3 class="has-info">{{validMessage}}</h3>
                             </div>
-
-
                             <div class="form-group">
                               <input type="text" id="username" class="form-control" formControlName="username" placeholder= "Username" required autofocus/>
                             </div>
@@ -29,8 +26,6 @@
                               Max Length is 20
                             </div>
                             </div>
-
-
                             <div class="form-group">
                               <input type="email" id="email" class="form-control" formControlName="email" placeholder= "Email" required />
                             </div>
@@ -39,10 +34,9 @@
                                 email is required
                               </div> -->
                               <div [hidden]="!email.errors.email">
-                                invalid email id
+                                Invalid email id
                               </div>
                             </div>
-
 
                             <div class="form-group">
                               <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number" required/>
@@ -56,7 +50,6 @@
                               </div>
                             </div>
 
-
                             <div class="form-group">
                               <input type="password" id="password" class="form-control" formControlName="password" placeholder= "Password" required/>
                             </div>
@@ -65,7 +58,6 @@
                                 password is required
                               </div> 
                             </div> -->
-
 
                             <div class="form-group">
                               <input type="password" class="form-control" formControlName="confirmPassword" placeholder= "Confirm Password" required/>

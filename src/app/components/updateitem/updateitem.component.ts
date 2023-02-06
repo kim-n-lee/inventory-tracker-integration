@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { throwError } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
-import { ManufacturerService } from 'src/app/services/manufacturer.service';
 import { Item } from 'src/app/item';
-import { ApiResponse } from 'src/app/api.response';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-updateitem',
@@ -19,10 +13,8 @@ export class UpdateitemComponent implements OnInit {
 
   id: number;
   item: Item = new Item();
-  apiResponse:ApiResponse;
 
   constructor(private itemService: ItemService, private route: ActivatedRoute,private router: Router) { }
-
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];

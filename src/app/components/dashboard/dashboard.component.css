@@ -1,8 +1,29 @@
 body {
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.container{
+  width: 800px;
+  height: 300px;
+  position: relative;
+  margin: 30px auto;
+}
+
+.container img{
+  width: 750px;
+  height: 300px;
+}
+
+.text{
+  color: black;
+  font-size: 40px;
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  transform: translate(-50%, -50%);
 }
 
 table {
@@ -21,3 +42,4 @@ table {
     text-align: center;
     font-size: 30px;
   }
+

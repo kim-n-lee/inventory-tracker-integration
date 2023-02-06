@@ -7,26 +7,23 @@
     <table class="table table-hover" cellspacing="0" width="100%">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Description</th>
           <th>Category</th>
           <th>Quantity</th>
-          <th>Minimum Amount</th>
+          <th>Min Amount</th>
           <th>Order Contact</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of items">
-          <td>{{item.id}}</td>
           <td>{{item.name}}</td>
           <td>{{item.description}}</td>
           <td>{{item.category}}</td>
           <td>{{item.numberInInventory}}</td>
           <td>{{item.numberMinimumToKeepOnHand}}</td>
           <td>{{item.manufacturerPhoneNumber}}</td>
-          
             <td>
               <button style='margin-right:16px' (click)="updateItem(item.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
               <button style='margin-right:16px' (click)="deleteItem(item.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>

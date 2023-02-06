@@ -4,8 +4,6 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { ReturnStatement } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',

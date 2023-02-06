@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Item } from '../item';
-import { ApiResponse } from '../api.response';
 
 type ItemsResponse = {
   items: Item[];
@@ -36,7 +35,6 @@ export class ItemService {
   }
 
   addItem(item){
-    // let body = JSON.stringify(item);
     return this.http.post('/server/items/add', item, httpOptions);
   }
 
