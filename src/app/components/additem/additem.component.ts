@@ -1,6 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { throwError } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
@@ -24,12 +23,8 @@ export class AdditemComponent implements OnInit {
 
   get() {
     this.manufacturerService.getManufacturers().subscribe(res=>
-      {
-        this.manufacturers=res;
-        // console.log(this.manufacturers);
-      }
-    );
-      
+      {this.manufacturers=res;}
+    ); 
   }
 
   ngOnInit() {
