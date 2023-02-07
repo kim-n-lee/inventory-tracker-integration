@@ -30,11 +30,11 @@ export class UpdatemanufacturerComponent implements OnInit {
     this.manufacturerService.updateManufacturer(this.id, {"id": this.id, "name": this.manufacturer.name, "address": this.manufacturer.address, "phoneNumber": this.manufacturer.phoneNumber, "items": this.manufacturer.items})
       .subscribe(data => console.log(data), error => console.log(error));
     this.manufacturer = new Manufacturer();
-    this.router.navigate(['/manufacturers/all']);
+    this.router.navigate(['/manufacturers']);
     }
 
   list(){
-    this.router.navigate(['manufacturers/all']);
+    this.router.navigate(['manufacturers']);
   }
 
 }

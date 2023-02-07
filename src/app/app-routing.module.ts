@@ -86,7 +86,7 @@ const routes: Routes = [
 
   {
     path: 'manufacturers/update/:id',
-    component: UpdateitemComponent
+    component: UpdatemanufacturerComponent
   }, 
 ];
 
