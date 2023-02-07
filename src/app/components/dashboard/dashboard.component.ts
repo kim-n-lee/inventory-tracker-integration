@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   get(){
+  console.log(this.username);
   this.itemService.getLowStock().subscribe(
   data => {this.items = data},
       err => console.error(err),

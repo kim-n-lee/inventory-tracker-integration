@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
   userForm: FormGroup;
   validMessage: string = "";
+  usernameAlreadyExists;
 
   constructor(private router: Router, private userService: UserService){}
 
@@ -45,10 +46,19 @@ export class RegistrationComponent implements OnInit {
     return this.userForm.get('confirmPassword');
   } 
   submitRegistration() {
-    if (this.userForm.value.password!==this.userForm.value.confirmPassword){
+    if(this.userService.usernameExists(this.userForm.value.username).subscribe(
+      data => {
+        this.usernameAlreadyExists = data;
+        console.log(this.usernameAlreadyExists);
+      })){
+      this.validMessage="This username exists. Try another username!";
+      this.userForm.reset({username: "", email: "", password: "", confirmPassword: ""});
+      this.router.navigate(['/registration']);
+    } else if (this.userForm.value.password!==this.userForm.value.confirmPassword){
       this.validMessage = "Passwords must match!";
-    } 
-    else if (this.userForm.valid) {
+      this.userForm.reset({});
+      this.router.navigate(['/registration']);
+    } else if (this.userForm.valid) {
       this.validMessage = "New user has been registered. Thank you!";
       this.userService.createUserRegistration(this.userForm.value).subscribe(
         data => {
