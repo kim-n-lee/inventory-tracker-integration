@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as _ from 'lodash';
 import { Manufacturer } from '../manufacturer';
+import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -14,6 +15,10 @@ const httpOptions = {
 export class ManufacturerService {
 
   constructor(private http:HttpClient) { }
+
+  getManufacturerById(id: number): Observable<Manufacturer> {
+    return this.http.get<Manufacturer>(`/server/manufacturer/id/${id}`);
+  } 
 
   getManufacturers() {
     return this.http.get('/server/manufacturers');
@@ -33,10 +38,10 @@ export class ManufacturerService {
   }
 
   deleteManufacturer(id: number) {
-    return this.http.delete(`/server/manufacturer/${id}`);
+    return this.http.delete(`/server/manufacturers/${id}`);
   }
 
-  updateItem(id: number, manufacturer: Manufacturer) {
+  updateManufacturer(id: number, manufacturer: Manufacturer) {
     return this.http.put( `/server/manufacturers/`+ manufacturer.id, manufacturer);
   }
 }

@@ -14,6 +14,7 @@ import { ItemslistComponent } from './components/itemslist/itemslist.component';
 import { UpdateitemComponent } from './components/updateitem/updateitem.component';
 import { SearchFormComponent } from './components/searchForm/searchForm.component';
 import { SearchResultsComponent } from './components/searchResults/searchResults.component';
+import { UpdatemanufacturerComponent } from './components/updatemanufacturer/updatemanufacturer.component';
 
 const routes: Routes = [
   {
@@ -81,9 +82,12 @@ const routes: Routes = [
   {
     path: 'search/results',
     component: SearchResultsComponent
-  }
+  },
 
-
+  {
+    path: 'manufacturers/update/:id',
+    component: UpdateitemComponent
+  }, 
 ];
 
 @NgModule({

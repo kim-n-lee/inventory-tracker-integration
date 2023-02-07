@@ -24,6 +24,7 @@ import { ItemslistComponent } from './components/itemslist/itemslist.component';
 import { UpdateitemComponent } from './components/updateitem/updateitem.component';
 import { SearchFormComponent } from './components/searchForm/searchForm.component';
 import { SearchResultsComponent } from './components/searchResults/searchResults.component';
+import { UpdatemanufacturerComponent } from './components/updatemanufacturer/updatemanufacturer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SearchResultsComponent } from './components/searchResults/searchResults
     ItemslistComponent,
     UpdateitemComponent, 
     SearchFormComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    UpdatemanufacturerComponent
   ],
   imports: [
     BrowserModule,

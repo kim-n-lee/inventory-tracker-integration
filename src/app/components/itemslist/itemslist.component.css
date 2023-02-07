@@ -5,6 +5,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.title {  
+  padding-top: 20px; 
+}
+
 table {
     width: 80%;
     margin-right: auto;
