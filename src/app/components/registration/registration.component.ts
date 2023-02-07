@@ -64,6 +64,7 @@ export class RegistrationComponent implements OnInit {
             data => {
              this.userForm.reset();
               sessionStorage.setItem("sessionName", this.userForm.value.username);
+              console.log(sessionStorage.sessionName);
               this.router.navigate(['/dashboard']);
               return true;
             },
