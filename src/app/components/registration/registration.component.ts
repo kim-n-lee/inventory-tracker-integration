@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
   userForm: FormGroup;
   validMessage: string = "";
+  usernameAlreadyExists;
 
   constructor(private router: Router, private userService: UserService){}
 
@@ -45,25 +46,36 @@ export class RegistrationComponent implements OnInit {
     return this.userForm.get('confirmPassword');
   } 
   submitRegistration() {
-    if (this.userForm.value.password!==this.userForm.value.confirmPassword){
-      this.validMessage = "Passwords must match!";
-    } 
-    else if (this.userForm.valid) {
-      this.validMessage = "New user has been registered. Thank you!";
-      this.userService.createUserRegistration(this.userForm.value).subscribe(
-        data => {
+    this.userService.usernameExists(this.userForm.value.username).subscribe(
+      data => {
+        this.usernameAlreadyExists = data;
+        console.log(this.usernameAlreadyExists);
+        if (this.usernameAlreadyExists) {
+          this.validMessage="This username exists. Try another username!";
           this.userForm.reset();
-          sessionStorage.setItem("sessionName", this.userForm.value.username);
-          this.router.navigate(['/dashboard']);
-          return true;
-        },
-        error => {
-          return Observable.throw(error);
+          this.router.navigate(['/registration']);
+        } else if (this.userForm.value.password!==this.userForm.value.confirmPassword){
+          this.validMessage = "Passwords must match!";
+          this.userForm.reset({});
+          this.router.navigate(['/registration']);
+        } else if (this.userForm.valid) {
+         this.validMessage = "New user has been registered. Thank you!";
+          this.userService.createUserRegistration(this.userForm.value).subscribe(
+            data => {
+             this.userForm.reset();
+              sessionStorage.setItem("sessionName", this.userForm.value.username);
+              console.log(sessionStorage.sessionName);
+              this.router.navigate(['/dashboard']);
+              return true;
+            },
+            error => {
+              return Observable.throw(error);
+            }
+          )
+        } else {
+          this.validMessage = "Please fill out the form before submitting!"
         }
-      )
-    } else {
-      this.validMessage = "Please fill out the form before submitting!"
-    }
-  }
+      }
+    )}
 
 }

@@ -24,6 +24,10 @@ export class UserService {
     let body = JSON.stringify(user);
     return this.http.post('/server/users/add', body, httpOptions);
   }
+
+  usernameExists(username: string){
+    return this.http.get('/server/users/check/' + username);
+  }
 }
 
 
