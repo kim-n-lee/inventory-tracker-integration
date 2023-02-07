@@ -52,7 +52,7 @@ export class RegistrationComponent implements OnInit {
         console.log(this.usernameAlreadyExists);
       })){
       this.validMessage="This username exists. Try another username!";
-      this.userForm.reset({username: "", email: "", password: "", confirmPassword: ""});
+      this.userForm.reset();
       this.router.navigate(['/registration']);
     } else if (this.userForm.value.password!==this.userForm.value.confirmPassword){
       this.validMessage = "Passwords must match!";
