@@ -1,11 +1,8 @@
 <app-navbar2></app-navbar2>
-<div class="header">
-    <h1>Welcome, {{username}}!</h1>
-</div>
 <div style="text-align: center;" class="container">
   <img src="assets/dashboard.png" alt="">
   <div class="text">
-    Welcome, Karina!
+    Welcome, {{username}}!
   </div>
 </div>
 <p>Low Stock</p>
@@ -15,7 +12,8 @@
         <th scope="col">Item Name</th>
         <th scope="col">Category</th>
         <th scope="col">Quantity</th>
-        <th scope="col">Min Amount</th>
+        <th scope="col">Minimum Amount</th>
+        <th scope="col">Order Contact</th>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +22,7 @@
       <td>{{item.category}}</td>
       <td>{{item.numberInInventory}}</td>
       <td>{{item.numberMinimumToKeepOnHand}}</td>
+      <td>{{this.itemService.formatPhoneNumber(item.manufacturerPhoneNumber)}}</td>
       </tr>
     </tbody>
   </table>
