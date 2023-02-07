@@ -46,34 +46,35 @@ export class RegistrationComponent implements OnInit {
     return this.userForm.get('confirmPassword');
   } 
   submitRegistration() {
-    if(this.userService.usernameExists(this.userForm.value.username).subscribe(
+    this.userService.usernameExists(this.userForm.value.username).subscribe(
       data => {
         this.usernameAlreadyExists = data;
         console.log(this.usernameAlreadyExists);
-      })){
-      this.validMessage="This username exists. Try another username!";
-      this.userForm.reset();
-      this.router.navigate(['/registration']);
-    } else if (this.userForm.value.password!==this.userForm.value.confirmPassword){
-      this.validMessage = "Passwords must match!";
-      this.userForm.reset({});
-      this.router.navigate(['/registration']);
-    } else if (this.userForm.valid) {
-      this.validMessage = "New user has been registered. Thank you!";
-      this.userService.createUserRegistration(this.userForm.value).subscribe(
-        data => {
+        if (this.usernameAlreadyExists) {
+          this.validMessage="This username exists. Try another username!";
           this.userForm.reset();
-          sessionStorage.setItem("sessionName", this.userForm.value.username);
-          this.router.navigate(['/dashboard']);
-          return true;
-        },
-        error => {
-          return Observable.throw(error);
+          this.router.navigate(['/registration']);
+        } else if (this.userForm.value.password!==this.userForm.value.confirmPassword){
+          this.validMessage = "Passwords must match!";
+          this.userForm.reset({});
+          this.router.navigate(['/registration']);
+        } else if (this.userForm.valid) {
+         this.validMessage = "New user has been registered. Thank you!";
+          this.userService.createUserRegistration(this.userForm.value).subscribe(
+            data => {
+             this.userForm.reset();
+              sessionStorage.setItem("sessionName", this.userForm.value.username);
+              this.router.navigate(['/dashboard']);
+              return true;
+            },
+            error => {
+              return Observable.throw(error);
+            }
+          )
+        } else {
+          this.validMessage = "Please fill out the form before submitting!"
         }
-      )
-    } else {
-      this.validMessage = "Please fill out the form before submitting!"
-    }
-  }
+      }
+    )}
 
 }
