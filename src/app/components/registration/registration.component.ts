@@ -63,8 +63,6 @@ export class RegistrationComponent implements OnInit {
           this.userService.createUserRegistration(this.userForm.value).subscribe(
             data => {
              this.userForm.reset();
-              sessionStorage.setItem("sessionName", this.userForm.value.username);
-              console.log(sessionStorage.sessionName);
               this.router.navigate(['/dashboard']);
               return true;
             },
@@ -72,6 +70,7 @@ export class RegistrationComponent implements OnInit {
               return Observable.throw(error);
             }
           )
+          sessionStorage.setItem("sessionName", this.userForm.value.username);
         } else {
           this.validMessage = "Please fill out the form before submitting!"
         }
