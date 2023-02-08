@@ -22,6 +22,18 @@ export class AddmanufacturerComponent implements OnInit {
     });
   }
 
+  get name() {
+    return this.addManufacturerForm.get('name');
+  } 
+ 
+  get address() {
+    return this.addManufacturerForm.get('address');
+  } 
+ 
+  get phoneNumber() {
+    return this.addManufacturerForm.get('phoneNumber');
+  }
+
   submitManufacturer() {
     if (this.addManufacturerForm.valid) {
       this.validMessage = "New manufacturer added!";
