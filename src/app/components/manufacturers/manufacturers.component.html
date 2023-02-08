@@ -18,7 +18,7 @@
         <tr *ngFor="let manufacturer of manufacturers">
           <td>{{manufacturer.name}}</td>
           <td>{{manufacturer.address}}</td>
-          <td>{{manufacturer.phoneNumber}}</td>
+          <td>{{this.itemService.formatPhoneNumber(manufacturer.phoneNumber)}}</td>
           <td>
             <button style='margin-right:16px' (click)="updateManufacturer(manufacturer.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
             <button style='margin-right:16px' (click)="deleteManufacturer(manufacturer.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
