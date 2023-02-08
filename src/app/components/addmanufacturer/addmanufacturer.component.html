@@ -20,7 +20,7 @@
                                 <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number" required/>
                               </div>
                               <div *ngIf="!phoneNumber.valid && (phoneNumber.dirty || phoneNumber.touched)">
-                                <div ngif="phoneNumber.errors.pattern">
+                                <div *ngIf="phoneNumber.errors.pattern">
                                   Invalid phone number. Phone numbers must be 10 digits long.
                                 </div>
                               </div>
