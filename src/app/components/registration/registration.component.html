@@ -20,10 +20,10 @@
                               First Name is required
                             </div> -->
                             <div [hidden]="!username.errors.minlength">
-                              Min Length is 5
+                              Invalid username. Usernames must be atleast five characters long.
                             </div>
                             <div [hidden]="!username.errors.maxlength">
-                              Max Length is 20
+                              Invalid username. Usernames cannot be more than 20 characters long
                             </div>
                             </div>
                             <div class="form-group">
@@ -34,7 +34,7 @@
                                 email is required
                               </div> -->
                               <div [hidden]="!email.errors.email">
-                                Invalid email id
+                                Invalid email. Email must be in email format.
                               </div>
                             </div>
 
@@ -46,7 +46,7 @@
                                 phoneNumber is required
                               </div> -->
                               <div [hidden]="!phoneNumber.errors.pattern">
-                                Invalid phone number
+                                Invalid phone number. Phone numbers must be 10 digits long.
                               </div>
                             </div>
 
