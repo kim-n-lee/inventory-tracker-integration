@@ -8,5 +8,6 @@ description: string = "";
 category: string = "";
 numberInInventory: number = 0;
 numberMinimumToKeepOnHand: number = 0;
+isBelowMinAmount: boolean = null;
 
 }
