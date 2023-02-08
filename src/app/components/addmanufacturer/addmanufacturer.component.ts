@@ -18,7 +18,7 @@ export class AddmanufacturerComponent implements OnInit {
     this.addManufacturerForm = new FormGroup({
       name: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      phoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$")]),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$")]),
     });
   }
 
@@ -37,9 +37,9 @@ export class AddmanufacturerComponent implements OnInit {
   submitManufacturer() {
     if (this.addManufacturerForm.valid) {
       this.validMessage = "New manufacturer added!";
-      this.manufacturerService.addManufacturer(this. addManufacturerForm.value).subscribe(
+      this.manufacturerService.addManufacturer(this.addManufacturerForm.value).subscribe(
         data => {
-          this. addManufacturerForm.reset();
+          this.addManufacturerForm.reset();
           return true;
         },
         error => {

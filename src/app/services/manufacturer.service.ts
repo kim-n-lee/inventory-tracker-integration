@@ -3,7 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Manufacturer } from '../manufacturer';
 import { Observable } from 'rxjs';
 
-
+type ManufacturersResponse = {
+  manufacturers: Manufacturer[];
+}
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -12,7 +14,6 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-
 export class ManufacturerService {
 
   constructor(private http:HttpClient) { }
@@ -31,11 +32,11 @@ export class ManufacturerService {
   }
 
   deleteManufacturer(id: number) {
-    return this.http.delete(`/server/manufacturers/${id}`);
-  }
+      return this.http.delete(`/server/manufacturers/${id}`);
+    }
 
   updateManufacturer(id: number, manufacturer: Manufacturer) {
-    return this.http.put( `/server/manufacturers/`+ manufacturer.id, manufacturer);
+    return this.http.put(`/server/manufacturers/`+ manufacturer.id, manufacturer);
   }
 }
 

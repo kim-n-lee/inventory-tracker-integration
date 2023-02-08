@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
 import { Manufacturer } from 'src/app/manufacturer';
 import { Router } from '@angular/router';
+import { ItemService } from 'src/app/services/item.service';
 
 @Component({
   selector: 'app-manufacturers',
@@ -12,7 +13,7 @@ export class ManufacturersComponent implements OnInit {
 
   public manufacturers;
 
-  constructor(private manufacturerService: ManufacturerService, private router: Router) { }
+  constructor(private manufacturerService: ManufacturerService, private itemService: ItemService, private router: Router) { }
 
   ngOnInit() {
     this.getManufacturers();
