@@ -1,0 +1,27 @@
+body {
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.title {  
+  padding-top: 20px; 
+}
+
+table {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .header {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    font-size: 30px;
+  }

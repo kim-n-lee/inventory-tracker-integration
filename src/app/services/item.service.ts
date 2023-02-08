@@ -50,4 +50,13 @@ export class ItemService {
     return this.http.post("/server/search/results?searchTerm=" + `${searchTerm}`, httpOptions);
     }
 
+    formatPhoneNumber(phoneNumber: number) {
+      const phoneNumberString = phoneNumber.toString();
+      const match = phoneNumberString.match(/^(\d{3})(\d{3})(\d{4})$/);
+      if (match) {
+        return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+      }
+      return null;
+    }
+
 }
