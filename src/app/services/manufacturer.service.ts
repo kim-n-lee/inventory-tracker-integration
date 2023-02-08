@@ -14,6 +14,7 @@ const httpOptions = {
 })
 
 export class ManufacturerService {
+  manufacturer: Manufacturer;
 
   constructor(private http:HttpClient) { }
 
@@ -31,7 +32,15 @@ export class ManufacturerService {
   }
 
   deleteManufacturer(id: number) {
-    return this.http.delete(`/server/manufacturers/${id}`);
+    this.getManufacturerById(id).subscribe(
+      data => {this.manufacturer = data},
+          err => console.error(err),
+          () => console.log('manufacturers loaded'));
+    if (this.manufacturer.items.length){
+      
+    } else {
+      return this.http.delete(`/server/manufacturers/${id}`);
+    }
   }
 
   updateManufacturer(id: number, manufacturer: Manufacturer) {
