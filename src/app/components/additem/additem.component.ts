@@ -12,7 +12,7 @@ import { ManufacturerService } from 'src/app/services/manufacturer.service';
 export class AdditemComponent implements OnInit {
 
   categories:string[] = [
-    'Baking Supplies', 'Cereals', 'Dairy', 'Drinks', 'Fruits/Vegetables', 'Oils', 'Proteins', 'Sweets', 'Tools/Appliances'];
+    'Cleaning Supplies', 'Drinks', 'Food', 'Syrups', 'Utensils', 'Packaging', 'Other'];
 
   addItemForm: FormGroup;
   validMessage: string = "";
