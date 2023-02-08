@@ -32,6 +32,18 @@ export class UpdatemanufacturerComponent implements OnInit {
     });
   }
 
+  get name() {
+    return this.updateManufacturerForm.get('name');
+  } 
+ 
+  get address() {
+    return this.updateManufacturerForm.get('address');
+  } 
+ 
+  get phoneNumber() {
+    return this.updateManufacturerForm.get('phoneNumber');
+  } 
+
   onSubmit() {
     console.log("This is the id: " + this.id);
     if (this.updateManufacturerForm.valid) {
