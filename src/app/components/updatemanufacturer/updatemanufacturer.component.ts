@@ -28,14 +28,14 @@ export class UpdatemanufacturerComponent implements OnInit {
     this.updateManufacturerForm = new FormGroup({
       name: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      phoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$")]),
-      });
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$")])
+    });
   }
 
   onSubmit() {
     console.log("This is the id: " + this.id);
-    if (this.updateManufacturerForm.value.valid){
-      this.validMessage = "Manufacturer updated!"
+    if (this.updateManufacturerForm.valid) {
+      this.validMessage = "New user has been registered. Thank you!";
       this.manufacturerService.updateManufacturer(this.id, {"id": this.id, "name": this.manufacturer.name, "address": this.manufacturer.address, "phoneNumber": this.manufacturer.phoneNumber, "items": this.manufacturer.items})
       .subscribe(data => console.log(data), error => console.log(error));
       this.manufacturer = new Manufacturer();
