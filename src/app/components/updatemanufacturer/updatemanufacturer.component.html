@@ -19,13 +19,13 @@
                                 <label>Phone number:</label>
                                 <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="manufacturer.phoneNumber" name="phoneNumber" />
                               </div>
-                              <div *ngIf="!phoneNumber.valid && (manufacturer.phoneNumber.dirty || manufacturer.phoneNumber.touched)">
-                                <div *ngIf="phoneNumber.errors.pattern">
+                              <div *ngIf="!manufacturer.phoneNumber.valid && (manufacturer.phoneNumber.dirty || manufacturer.phoneNumber.touched)">
+                                <div [hidden]="manufacturer.phoneNumber.errors.pattern">
                                   Invalid phone number. Phone numbers must be 10 digits long.
                                 </div>
                               </div>
                             <div>
-                            <button style='margin-right:16px' (click)="updateManufacturer(manufacturer.id)" class="btn btn-success">Update</button>
+                            <button style='margin-right:16px' (click)="manufacturerService.updateManufacturer(manufacturer[id])" class="btn btn-success">Update</button>
                             <button style='margin-right:16px' (click)="list()" class="btn btn-success">Back to Manufacturers</button>
                           </div>
                     </form>

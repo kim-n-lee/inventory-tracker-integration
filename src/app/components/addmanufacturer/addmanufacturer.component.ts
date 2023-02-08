@@ -37,9 +37,9 @@ export class AddmanufacturerComponent implements OnInit {
   submitManufacturer() {
     if (this.addManufacturerForm.valid) {
       this.validMessage = "New manufacturer added!";
-      this.manufacturerService.addManufacturer(this. addManufacturerForm.value).subscribe(
+      this.manufacturerService.addManufacturer(this.addManufacturerForm.value).subscribe(
         data => {
-          this. addManufacturerForm.reset();
+          this.addManufacturerForm.reset();
           return true;
         },
         error => {
