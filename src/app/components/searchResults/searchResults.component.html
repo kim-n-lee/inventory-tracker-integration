@@ -13,6 +13,7 @@
           <th>Category</th>
           <th>Quantity</th>
           <th>Minimum Amount</th>
+          <th>Manufacturer</th>
           <th>Order Contact</th>
           <th>Actions</th>
         </tr>
@@ -24,6 +25,7 @@
           <td>{{item.category}}</td>
           <td>{{item.numberInInventory}}</td>
           <td>{{item.numberMinimumToKeepOnHand}}</td>
+          <td>{{item.manufacturerName}}</td>
           <td>{{this.itemService.formatPhoneNumber(item.manufacturerPhoneNumber)}}</td>
             <td><button style='margin-right:16px' (click)="updateItem(item.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
               <button style='margin-right:16px' (click)="deleteItem(item.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
