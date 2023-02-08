@@ -21,7 +21,6 @@ export class AuthenticationService {
 
     isLoggedIn(){
       let user = sessionStorage.getItem('sessionName');
-      // console.log("logged in with " + user);
       return !(user === null);
     }
 
@@ -32,19 +31,5 @@ export class AuthenticationService {
       console.log(this.isLoggedIn());
       return this.httpClient.get(this.baseUrl+'/logout')
     }
-
-    // isUserLoggedIn() {
-    //   let user = sessionStorage.getItem('email');
-    //   return !(user === null) && true;
-    // }
-  
-    // logOut() {
-    //   sessionStorage.removeItem('id');
-    //   sessionStorage.removeItem('email');
-    //   sessionStorage.removeItem('username');
-    //   // items to check that user has been logged out:
-    //   console.log(sessionStorage.getItem('id')+": should be null");
-    //   return console.log("user has been logged out");
-    // }
   }
 
