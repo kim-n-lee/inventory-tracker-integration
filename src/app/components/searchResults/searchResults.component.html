@@ -1,4 +1,5 @@
 <app-navbar2></app-navbar2>
+<p class="title">Item Search Results</p>
 <div class="panel panel-primary">
   <div class="panel-heading">
   </div>
@@ -12,6 +13,7 @@
           <th>Category</th>
           <th>Quantity</th>
           <th>Minimum Amount</th>
+          <th>Manufacturer</th>
           <th>Order Contact</th>
           <th>Actions</th>
         </tr>
@@ -23,6 +25,7 @@
           <td>{{item.category}}</td>
           <td>{{item.numberInInventory}}</td>
           <td>{{item.numberMinimumToKeepOnHand}}</td>
+          <td>{{item.manufacturerName}}</td>
           <td>{{this.itemService.formatPhoneNumber(item.manufacturerPhoneNumber)}}</td>
             <td><button style='margin-right:16px' (click)="updateItem(item.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
               <button style='margin-right:16px' (click)="deleteItem(item.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
@@ -33,4 +36,4 @@
   </div>
 </div>
 
-<ng-template #empty><p>No results yet. Please enter a search.</p></ng-template>
+<ng-template #empty><p>No results. Please enter a search.</p></ng-template>

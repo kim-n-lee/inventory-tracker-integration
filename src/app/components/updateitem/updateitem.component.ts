@@ -27,7 +27,9 @@ export class UpdateitemComponent implements OnInit {
 
   onSubmit() {
     console.log("This is the id: " + this.id);
-    this.itemService.updateItem(this.id, {"id": this.id, "name": this.item.name, "category": this.item.category, "description": this.item.description, "numberInInventory": this.item.numberInInventory, "numberMinimumToKeepOnHand": this.item.numberMinimumToKeepOnHand, "manufacturer": this.item.manufacturer})
+    this.itemService.updateItem(this.id, {"id": this.id, "name": this.item.name, "category": this.item.category, "description": this.item.description, 
+    "numberInInventory": this.item.numberInInventory, "numberMinimumToKeepOnHand": this.item.numberMinimumToKeepOnHand, "manufacturer": this.item.manufacturer,
+    "isBelowMinAmount": this.item.isBelowMinAmount})
       .subscribe(data => console.log(data), error => console.log(error));
     this.item = new Item();
     this.router.navigate(['/items/all']);
