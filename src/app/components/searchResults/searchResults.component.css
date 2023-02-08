@@ -22,7 +22,9 @@ p {
   font-size: 30px;
 }
 
+
+.warning {background-color: #f8d7da}
+
 .title {  
   padding-top: 20px; 
 }
-

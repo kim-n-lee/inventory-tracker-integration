@@ -48,6 +48,12 @@ article {
     width: auto;
 }
 
+.btn-secondary{
+    background-color: #6C757D;
+    border-color: #6C757D;
+
+}
+
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
     background-color: #262525;
     border-color: #262525;
