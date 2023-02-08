@@ -46,47 +46,56 @@ const routes: Routes = [
 
   {
     path: 'manufacturers',
-    component: ManufacturersComponent
+    component: ManufacturersComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'items',
-    component: ItemsComponent
+    component: ItemsComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'manufacturers/add',
-    component: AddmanufacturerComponent
+    component: AddmanufacturerComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'items/add',
-    component: AdditemComponent
+    component: AdditemComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'items/all',
-    component: ItemslistComponent
+    component: ItemslistComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'items/update/:id',
-    component: UpdateitemComponent
+    component: UpdateitemComponent,
+    canActivate: [AuthGuardService]
   }, 
 
   {
     path: 'search',
-    component: SearchFormComponent
+    component: SearchFormComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'search/results',
-    component: SearchResultsComponent
+    component: SearchResultsComponent,
+    canActivate: [AuthGuardService]
   },
 
   {
     path: 'manufacturers/update/:id',
-    component: UpdatemanufacturerComponent
+    component: UpdatemanufacturerComponent,
+    canActivate: [AuthGuardService]
   }, 
 ];
 
