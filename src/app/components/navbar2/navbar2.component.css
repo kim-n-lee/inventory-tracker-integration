@@ -1,12 +1,14 @@
 .nav-link {
-    margin-right: 25px;
-    text-align: center;
-    
+    margin-right: 10px;
+    text-align: left;
 }
 
+i {
+    margin-right: 10px;
+  }
 
-.navbar-brand {
-    margin-left: 25px;
+.navbar-toggler, .navbar-brand {
+    margin-right: 25px;
 }
 
 
