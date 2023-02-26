@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from 'src/app/item';
 import { ItemService } from 'src/app/services/item.service';
+import { ModalDismissReasons, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-searchResults',
@@ -12,9 +14,10 @@ import { ItemService } from 'src/app/services/item.service';
 export class SearchResultsComponent implements OnInit {
 
     searchTerm = "";
-    public items
+    public items;
+    private deleteId: number;
 
-  constructor(private route: ActivatedRoute, private itemService: ItemService) { }
+  constructor(private route: ActivatedRoute, private itemService: ItemService, private modalService: NgbModal, private http:HttpClient) { }
 
     ngOnInit() {
       this.route.queryParams.subscribe(params => {
@@ -24,9 +27,26 @@ export class SearchResultsComponent implements OnInit {
       });
     }
 
-    deleteItem(id: number) {
+/*     deleteItem(id: number) {
       this.itemService.deleteItem(id).subscribe(() => {
         this.items = this.items.filter(item => item.id !== id);
       });
+    } */
+
+    openDelete(targetModal, item: Item) {
+      this.deleteId = item.id;
+      this.modalService.open(targetModal, {
+          backdrop: 'static',
+          size: 'md'
+        });
+    }
+  
+    onDelete() {
+      const deleteURL = 'http://localhost:8080/items/' + this.deleteId;
+      this.http.delete(deleteURL)
+        .subscribe((results) => {
+          this.ngOnInit();
+          this.modalService.dismissAll();
+        });
     }
 }
