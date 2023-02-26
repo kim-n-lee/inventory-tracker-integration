@@ -40,7 +40,7 @@ export class ItemService {
 
   deleteItem(id: number) {
     return this.http.delete(`/server/items/${id}`);
-  }
+  } 
 
   updateItem(id: number, item: Item) {
     return this.http.put( `/server/items/`+ item.id, item);
