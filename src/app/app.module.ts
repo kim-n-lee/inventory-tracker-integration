@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserService } from './services/user.service';
@@ -25,6 +24,7 @@ import { UpdateitemComponent } from './components/updateitem/updateitem.componen
 import { SearchFormComponent } from './components/searchForm/searchForm.component';
 import { SearchResultsComponent } from './components/searchResults/searchResults.component';
 import { UpdatemanufacturerComponent } from './components/updatemanufacturer/updatemanufacturer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import { UpdatemanufacturerComponent } from './components/updatemanufacturer/upd
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [UserService, AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent]

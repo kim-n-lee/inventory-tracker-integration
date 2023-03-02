@@ -1,13 +1,17 @@
-.nav-link {
-    margin-right: 25px;
-    text-align: center;
-    
-}
+i {
+    margin-right: 10px;
+  }
 
+.navbar-toggler {
+    margin-right: 30px;
+}
 
 .navbar-brand {
-    margin-left: 25px;
+    margin-left: 0;
 }
+
+
+
 
 
 

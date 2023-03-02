@@ -1,4 +1,57 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/dashboard">
+          <img src="assets/logonav.png" width="120" height="60">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Inventory Tracker</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/dashboard"><i class="fa-regular fa-house"></i>Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/items/all"><i class="fa-regular fa-list"></i>All Items</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/manufacturers"><i class="fa-regular fa-industry"></i>All Manufacturers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/items/add"><i class="fa-regular fa-cart-plus"></i>Add Item</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/manufacturers/add"><i class="fa-regular fa-address-card"></i>Add Manufacturer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search/results"><i class="fa-regular fa-magnifying-glass"></i>Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login" (click)="submitLogout()"><i class="fa-regular fa-arrow-right-from-bracket"></i>Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="/dashboard">
         <img src="assets/logonav.png" width="120" height="60">
@@ -29,4 +82,4 @@
             </li>
         </ul>
     </div>
-  </nav>
+  </nav> -->

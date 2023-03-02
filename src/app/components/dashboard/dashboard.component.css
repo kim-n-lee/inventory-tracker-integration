@@ -9,7 +9,8 @@ body {
   width: 800px;
   height: 250px;
   position: relative;
-  margin: 30px auto;
+  margin: 20px auto;
+  margin-top: 120px;
 }
 
 .container img{
@@ -30,16 +31,18 @@ table {
     width: 60%;
     margin-right: auto;
     margin-left: auto;
-  }
+}
 
-  .header {
+.header {
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
-  }
+}
 
-  p {
+p {
     text-align: center;
     font-size: 30px;
-  }
+}
+
+
 
