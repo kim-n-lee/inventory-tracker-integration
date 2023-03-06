@@ -5,7 +5,7 @@
           <div class="form-content">
               <div class="form-items">
                   <h3>New User Registration</h3>
-                  <p>Fill in the data below</p>
+                  <p>Please fill in the data below</p>
                       <div class="container">
                           <form [formGroup]="userForm" (ngSubmit)="submitRegistration()" novalidate>
                             <div *ngIf="validMessage != ''">
@@ -43,7 +43,7 @@
                           <button id="submit" type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Register</button>
                           <pre></pre>
                       </div>
-                      <p class="text-center">Already have an account? <a href="/login">Log In here</a> </p>
+                      <p class="text-center">Already have an account? <a href="/login">Login here</a> </p>
                   </form>
               </div>
           </div>
