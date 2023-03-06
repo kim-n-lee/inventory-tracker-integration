@@ -1,12 +1,16 @@
 <app-navbar2></app-navbar2>
-<div style="text-align: center;" class="container">
-  <img src="assets/dashboard.png" alt="">
-  <div class="text">
-    Welcome, {{username}}!
-  </div>
+
+<div class="banner-card text-center">
+    <figure class="size-4">
+      <img class="img-fluid" src="assets/dashboard.png">
+   </figure>
+   <div class="banner-text">
+    <h2>Welcome, {{username}}!</h2>
+   </div>
 </div>
+  
 <p>Low Stock</p>
-  <table class="table table-hover">
+  <table style="font-size: 1vw;" class="table table-hover">
     <thead class="table-dark">
       <tr>
         <th scope="col">Item Name</th>
@@ -26,3 +30,6 @@
       </tr>
     </tbody>
   </table>
+
+
+  

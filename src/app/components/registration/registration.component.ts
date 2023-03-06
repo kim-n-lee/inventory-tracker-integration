@@ -14,6 +14,8 @@ export class RegistrationComponent implements OnInit {
   validMessage: string = "";
   usernameAlreadyExists;
 
+  submitted = false;
+
   constructor(private router: Router, private userService: UserService){}
 
   ngOnInit() {
@@ -21,9 +23,9 @@ export class RegistrationComponent implements OnInit {
       username: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$")]),
-      password: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       confirmPassword: new FormControl('', Validators.required)
-    });
+    },);
   }
 
   get username() {
@@ -52,12 +54,12 @@ export class RegistrationComponent implements OnInit {
         console.log(this.usernameAlreadyExists);
         if (this.usernameAlreadyExists) {
           this.validMessage="This username exists. Try another username!";
-          this.userForm.reset();
-          this.router.navigate(['/registration']);
+/*           this.userForm.reset();
+          this.router.navigate(['/registration']); */
         } else if (this.userForm.value.password!==this.userForm.value.confirmPassword){
           this.validMessage = "Passwords must match!";
-          this.userForm.reset({});
-          this.router.navigate(['/registration']);
+/*           this.userForm.reset({});
+          this.router.navigate(['/registration']); */
         } else if (this.userForm.valid) {
          this.validMessage = "New user has been registered. Thank you!";
           this.userService.createUserRegistration(this.userForm.value).subscribe(

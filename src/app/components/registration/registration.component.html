@@ -5,7 +5,7 @@
           <div class="form-content">
               <div class="form-items">
                   <h3>New User Registration</h3>
-                  <p>Fill in the data below</p>
+                  <p>Please fill in the data below</p>
                       <div class="container">
                           <form [formGroup]="userForm" (ngSubmit)="submitRegistration()" novalidate>
                             <div *ngIf="validMessage != ''">
@@ -14,65 +14,36 @@
                             <div class="form-group">
                               <input type="text" id="username" class="form-control" formControlName="username" placeholder= "Username" required autofocus/>
                             </div>
-                            <div
-                            *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
-                            <!--<div [hidden]="!username.errors.required"> 
-                              First Name is required
-                            </div> -->
-                            <div [hidden]="!username.errors.minlength">
-                              Invalid username. Usernames must be at least five characters long.
-                            </div>
-                            <div [hidden]="!username.errors.maxlength">
-                              Invalid username. Usernames cannot be more than 20 characters long
-                            </div>
+                            <div class="validationStyle" *ngIf="!username.valid && (username.dirty ||username.touched)">
+                              <div [hidden]="!username.errors.minlength">Please enter a valid username. Must be at least 5 characters long.</div>
+                              <div [hidden]="!username.errors.maxlength">Please enter a valid username. Cannot be more than 20 characters long</div>
                             </div>
                             <div class="form-group">
                               <input type="email" id="email" class="form-control" formControlName="email" placeholder= "Email" required />
                             </div>
-                            <div *ngIf="!email.valid && (email.dirty ||email.touched)">
-                            <!--<div [hidden]="!email.errors.required"> 
-                                email is required
-                              </div> -->
-                              <div [hidden]="!email.errors.email">
-                                Invalid email. Email must be in email format.
-                              </div>
+                            <div class="validationStyle" *ngIf="!email.valid && (email.dirty ||email.touched)">
+                              <div [hidden]="!email.errors.email">Please enter a valid email.</div>
                             </div>
-
                             <div class="form-group">
                               <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number" required/>
                             </div>
-                            <div *ngIf="!phoneNumber.valid && (phoneNumber.dirty ||phoneNumber.touched)">
-                              <!--<div [hidden]="!phoneNumber.errors.required"> 
-                                phoneNumber is required
-                              </div> -->
-                              <div [hidden]="!phoneNumber.errors.pattern">
-                                Invalid phone number. Phone numbers must be 10 digits long.
-                              </div>
+                            <div class="validationStyle" *ngIf="!phoneNumber.valid && (phoneNumber.dirty ||phoneNumber.touched)">
+                              <div [hidden]="!phoneNumber.errors.pattern">Please enter a valid phone number. Must be 10 digits long.</div>
                             </div>
-
                             <div class="form-group">
                               <input type="password" id="password" class="form-control" formControlName="password" placeholder= "Password" required/>
                             </div>
-                            <!--<div *ngIf="!password.valid && (password.dirty ||password.touched)">
-                              <div [hidden]="!password.errors.required"> 
-                                password is required
-                              </div> 
-                            </div> -->
-
+                            <div class="validationStyle" *ngIf="!password.valid && (password.dirty || password.touched)">
+                              <div [hidden]="!password.errors.minlength">Password must be at least 8 characters.</div>
+                            </div> 
                             <div class="form-group">
                               <input type="password" class="form-control" formControlName="confirmPassword" placeholder= "Confirm Password" required/>
                             </div>
-                           <!-- <div *ngIf="!confirmPassword.valid && (confirmPassword.dirty ||confirmPassword.touched)">
-                               <div [hidden]="!confirmPassword.errors.required"> 
-                                 Confirm password is required
-                               </div> 
-                             </div>-->
-                           
                           <div class="form-button mt-3">
-                          <button id="submit" type="submit" [disabled]="!userForm.valid"class="btn btn-primary">Register</button>
+                          <button id="submit" type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Register</button>
                           <pre></pre>
                       </div>
-                      <p class="text-center">Already have an account? <a href="/login">Log In here</a> </p>
+                      <p class="text-center">Already have an account? <a href="/login">Login here</a> </p>
                   </form>
               </div>
           </div>

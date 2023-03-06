@@ -5,3 +5,8 @@
 .navbar-brand {
     margin-left: 30px;
 }
+
+.navbar {
+    padding-left: 10px;
+    padding-top: 10px;
+}

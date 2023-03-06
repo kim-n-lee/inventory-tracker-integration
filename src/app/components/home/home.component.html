@@ -1,10 +1,20 @@
-<nav class="navbar navbar-expand-md">
-    <div class="navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
+<nav class="navbar navbar-expand-md navbar-dark">
+    <button 
+    class="navbar-toggler" 
+    type="button" 
+    data-bs-toggle="collapse" 
+    data-bs-target="#toggleMobileMenu" 
+    aria-controls="toggleMobileMenu"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="toggleMobileMenu">
+        <ul class="navbar-nav text-center ms-auto">
+            <li>
                 <a class="nav-link" href="/login">Login</a>
             </li>
-            <li class="nav-item">
+            <li>
                 <a class="nav-link" href="/registration">Register</a>
             </li>
         </ul>
@@ -14,7 +24,7 @@
        <figure class="size-4">
           <img src="assets/logohome.png">
        </figure>
-       <header>Designed to make small business owners' lives simpler, faster, and better.</header>
+       <header><p>Designed to make small business owners' lives simpler, faster, and better.</p></header>
        <div class="form-button mt-3">
            <a href="/registration"><button id="submit" type="submit" class="btn btn-primary">Find Out More</button></a>
          <div class="form-button mt-3">
