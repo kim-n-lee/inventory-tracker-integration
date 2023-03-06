@@ -2,7 +2,6 @@
 <div class="form-body">
     <div class="row">
         <div class="form-holder">
-          <button (click)="list()" class="btn btn-success">Back to Manufacturers</button><br>
             <div class="form-content">
                 <div class="form-items">
                     <h3>Add New Manufacturer</h3>
@@ -20,13 +19,14 @@
                               <div class="form-group">
                                 <input type="text" class="form-control" formControlName="phoneNumber" placeholder= "Phone Number" required/>
                               </div>
-                              <div *ngIf="!phoneNumber.valid && (phoneNumber.dirty || phoneNumber.touched)">
+                              <div class="validationStyle" *ngIf="!phoneNumber.valid && (phoneNumber.dirty || phoneNumber.touched)">
                                 <div *ngIf="phoneNumber.errors.pattern">
                                   Invalid phone number. Phone numbers must be 10 digits long.
                                 </div>
                               </div>
                             <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-primary">Add</button>
+                            <button id="submit" type="submit" class="btn btn-primary" style='margin-right:16px'>Add</button>
+                            <button (click)="list()" class="btn btn-success">Back to Manufacturers</button><br>
                             <pre></pre>
                         </div>
                     </form>

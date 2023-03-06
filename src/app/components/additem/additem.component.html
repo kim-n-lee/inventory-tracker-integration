@@ -2,7 +2,6 @@
 <div class="form-body">
     <div class="row">
         <div class="form-holder">
-          <button (click)="list()" class="btn btn-success">Back to Items</button><br>
             <div class="form-content">
                 <div class="form-items">
                     <h3>Add New Item</h3>
@@ -41,7 +40,8 @@
                                 </select>
                               </div>
                             <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-primary">Add</button>
+                            <button id="submit" type="submit" class="btn btn-primary" style='margin-right:16px'>Add</button>
+                            <button (click)="list()" class="btn btn-success">Back to Items</button><br>
                             <pre></pre>
                         </div>
                     </form>
