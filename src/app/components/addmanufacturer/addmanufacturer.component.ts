@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addmanufacturer',
@@ -12,7 +13,7 @@ export class AddmanufacturerComponent implements OnInit {
   addManufacturerForm: FormGroup;
   validMessage: string = "";
   
-  constructor(private manufacturerService: ManufacturerService) { }
+  constructor(private manufacturerService: ManufacturerService, private router: Router) { }
 
   ngOnInit() {
     this.addManufacturerForm = new FormGroup({
@@ -49,6 +50,10 @@ export class AddmanufacturerComponent implements OnInit {
     } else {
       this.validMessage = "Please fill out the form before submitting!"
     }
+  }
+
+  list(){
+    this.router.navigate(['manufacturers']);
   }
 
 }

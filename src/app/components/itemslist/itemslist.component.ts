@@ -49,5 +49,9 @@ export class ItemslistComponent implements OnInit {
         this.modalService.dismissAll();
       });
   }
+
+  addItem(){
+    this.router.navigate(['items/add']);
+  }
     
 }

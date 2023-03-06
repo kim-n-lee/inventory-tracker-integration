@@ -51,6 +51,9 @@ export class ManufacturersComponent implements OnInit {
         });
     }
 
+    addManu(){
+      this.router.navigate(['manufacturers/add']);
+    }
 }
 
 

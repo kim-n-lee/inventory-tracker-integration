@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { throwError } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-additem',
@@ -17,7 +18,7 @@ export class AdditemComponent implements OnInit {
   addItemForm: FormGroup;
   validMessage: string = "";
 
-  constructor(private itemService: ItemService, private manufacturerService: ManufacturerService) { }
+  constructor(private itemService: ItemService, private manufacturerService: ManufacturerService, private router: Router) { }
 
   public manufacturers: any;
 
@@ -57,6 +58,10 @@ submitItem() {
      this.validMessage = "Please fill out the form before submitting!"
    }
  }
+
+ list(){
+  this.router.navigate(['items/all']);
+}
 
 }
 
