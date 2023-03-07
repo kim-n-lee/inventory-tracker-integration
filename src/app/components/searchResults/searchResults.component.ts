@@ -4,6 +4,7 @@ import { Item } from 'src/app/item';
 import { ItemService } from 'src/app/services/item.service';
 import { ModalDismissReasons, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchResults',
@@ -17,7 +18,7 @@ export class SearchResultsComponent implements OnInit {
     public items;
     private deleteId: number;
 
-  constructor(private route: ActivatedRoute, private itemService: ItemService, private modalService: NgbModal, private http:HttpClient) { }
+  constructor(private route: ActivatedRoute, private itemService: ItemService, private modalService: NgbModal, private http:HttpClient, private router: Router) { }
 
     ngOnInit() {
       this.route.queryParams.subscribe(params => {
@@ -49,4 +50,10 @@ export class SearchResultsComponent implements OnInit {
           this.modalService.dismissAll();
         });
     }
+
+    updateItem(id:number) {
+      this.router.navigate(['/items/update', id]);
+  }
 }
+
+

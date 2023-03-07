@@ -38,6 +38,10 @@ export class ManufacturerService {
   updateManufacturer(id: number, manufacturer: Manufacturer) {
     return this.http.put(`/server/manufacturers/`+ manufacturer.id, manufacturer);
   }
+
+  search(searchTerm: string){
+    return this.http.post("/server/search/results?searchTerm=" + `${searchTerm}`, httpOptions);
+    }
 }
 
 
